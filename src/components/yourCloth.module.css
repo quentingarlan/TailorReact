@@ -1,0 +1,9 @@
+.img {
+  border: solid 2px transparent;
+  margin: 5px;
+}
+
+.selectedImg {
+  border: solid 2px blue;
+  margin: 5px;
+}
