@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react';
-
+import { Link } from "react-router-dom";
 import Layout from '../shared/layout';
 import CartProducts from './cartProduct';
 import { CartContext } from '../../contexts/cartContext';
 import { formatNumber } from '../../helpers/utils';
-import Link from 'next/link';
 import { PayPalButton } from "react-paypal-button-v2";
 import { functions } from '../../api/MailApiCall'
 import { DropDownList } from '@progress/kendo-react-dropdowns';
@@ -85,7 +84,7 @@ export default function Cart() {
                         {checkout &&
                             <div className="p-3 text-center text-success">
                                 <p>Checkout successfull</p>
-                                <Link href="/" className="btn btn-outline-success btn-sm">BUY MORE</Link>
+                                <Link to="/" className="btn btn-outline-success btn-sm">BUY MORE</Link>
                             </div>
                         }
                     </Row>
