@@ -16,5 +16,23 @@
         "tailorreact82abc937": {}
       }
     }
+  },
+  "envtailor": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tailorreact-envtailor-174247-authRole",
+      "UnauthRoleArn": "arn:aws:iam::824851412494:role/amplify-tailorreact-envtailor-174247-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::824851412494:role/amplify-tailorreact-envtailor-174247-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-tailorreact-envtailor-174247-deployment",
+      "UnauthRoleName": "amplify-tailorreact-envtailor-174247-unauthRole",
+      "StackName": "amplify-tailorreact-envtailor-174247",
+      "StackId": "arn:aws:cloudformation:eu-central-1:824851412494:stack/amplify-tailorreact-envtailor-174247/771962c0-efba-11eb-bb8c-0643634e2978",
+      "AmplifyAppId": "dvns3wimxxyfc"
+    },
+    "categories": {
+      "auth": {
+        "tailorreact82abc937": {}
+      }
+    }
   }
 }
