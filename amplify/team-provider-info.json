@@ -1,4 +1,17 @@
 {
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tailorreact-main-142151-authRole",
+      "UnauthRoleArn": "arn:aws:iam::824851412494:role/amplify-tailorreact-main-142151-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::824851412494:role/amplify-tailorreact-main-142151-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-tailorreact-main-142151-deployment",
+      "UnauthRoleName": "amplify-tailorreact-main-142151-unauthRole",
+      "StackName": "amplify-tailorreact-main-142151",
+      "StackId": "arn:aws:cloudformation:eu-central-1:824851412494:stack/amplify-tailorreact-main-142151/519baa30-f078-11eb-9c9c-02a0c6cea0d8",
+      "AmplifyAppId": "d2o6vtqgr87gdt"
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-reactamplified-dev-161734-authRole",
