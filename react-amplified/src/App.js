@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import CartContextProvider from './contexts/cartContext'
@@ -12,7 +11,6 @@ function App() {
               <Routes />
             </CartContextProvider>
           </HelmetProvider>
-    
   );
 }
 

@@ -24,7 +24,7 @@ export class YourCloths extends React.Component {
         <div>Tissus</div>
         {
           this.state.cloths.map(cloth =>
-            <img className={styles.img}
+            <img className={styles.img} alt='cloth selection'
               id={cloth} key={cloth} value={cloth} src={imgUrl + cloth}
               width='100' height='100'
               onClick={evt => this.handleChange(evt, cloth)}
