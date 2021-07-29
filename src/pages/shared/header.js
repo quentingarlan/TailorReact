@@ -10,8 +10,8 @@ const Header = () => {
       <header className={styles.header}>
          <h3>MY TAILOR</h3>
          <Link to='/'>Store</Link>
-         <Link to='/about'>About</Link>
          <Link to='/cart'> <CartIcon/> Cart ({itemCount})</Link>
+         <Link to='/about'>About</Link>
       </header>
    );
 }

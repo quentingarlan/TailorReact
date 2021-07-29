@@ -10,6 +10,11 @@
       "StackName": "amplify-tailorreact-main-142151",
       "StackId": "arn:aws:cloudformation:eu-central-1:824851412494:stack/amplify-tailorreact-main-142151/519baa30-f078-11eb-9c9c-02a0c6cea0d8",
       "AmplifyAppId": "d2o6vtqgr87gdt"
+    },
+    "categories": {
+      "auth": {
+        "reactamplified57eb16a5": {}
+      }
     }
   },
   "dev": {
