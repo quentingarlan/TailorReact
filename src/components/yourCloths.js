@@ -38,8 +38,10 @@ export class YourCloths extends React.Component {
 
   componentDidUpdate() {
     var firstElt = document.getElementById(this.state.cloths[0]);
-    this.unSelectAllElements(firstElt.parentElement);
-    firstElt.className = styles.selectedImg;
+    if (firstElt){
+      this.unSelectAllElements(firstElt.parentElement);
+      firstElt.className = styles.selectedImg;
+    }
   }
 
   handleLoad(evt, val) {
