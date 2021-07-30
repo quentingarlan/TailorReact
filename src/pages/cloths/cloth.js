@@ -1,4 +1,5 @@
 import {SendCloth} from '../../components/sendCloth'
+import {DeleteCloth} from '../../components/deleteCloth'
 
 export default function Cloth() {
   return <div>
@@ -6,7 +7,9 @@ export default function Cloth() {
       <h1 className="title">
         Add a cloth
       </h1>
-      <SendCloth></SendCloth>
+      <div><SendCloth></SendCloth></div>
+      <div></div>
+      <div><DeleteCloth></DeleteCloth></div>
     </main>
 
     <footer>
