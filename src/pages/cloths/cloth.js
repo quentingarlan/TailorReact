@@ -14,7 +14,7 @@ export default function Cloth() {
 
     <footer>
       <a
-        href=""
+        href="/"
         target="_blank"
         rel="noopener noreferrer">
           <img src="/clothes.svg" alt="tailor Logo" className="logo" />
