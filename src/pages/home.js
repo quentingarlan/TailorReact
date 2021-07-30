@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -17,20 +18,20 @@ const Home = () => {
 
                 <div className="grid">
 
-                    <a href="/store" className="card">
+                    <Link  to="/store" className="card">
                         <h3>Pantalons &rarr;</h3>
                         <p>Votre premier pantalon</p>
-                    </a>
+                    </Link >
 
-                    <a href="/tailors" className="card">
+                    <Link to="/tailors" className="card">
                         <h3>Nos tailleurs &rarr;</h3>
                         <p>Découvrez nos tailleurs</p>
-                    </a>
+                    </Link>
 
-                    <a href="/explanation" className="card">
+                    <Link to="/explanation" className="card">
                         <h3>La démarche &rarr;</h3>
                         <p>Découvrez my tailor</p>
-                    </a>
+                    </Link>
                 </div>
             </main>
 

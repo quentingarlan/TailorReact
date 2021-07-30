@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
@@ -23,7 +23,7 @@ const Routes = () => {
         <Route path="/explanation" component={Explanation} />
         <Route path="/tailors" component={Tailors} />
         <Route path="/cloth" component={Cloth} />
-        <Route path="*" component={NotFound} />
+        <Route to="*" component={NotFound} />
       </Switch>
     </Router>
   );
