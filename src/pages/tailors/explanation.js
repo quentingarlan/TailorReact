@@ -1,4 +1,4 @@
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Layout from '../shared/layout';
 
 export default function Explanation() {
