@@ -17,7 +17,7 @@ const Routes = () => {
   return (
     <Router>
       <Switch>
-        {/* <Route exact path="/" component={Home} /> */}
+        <Route exact path="/" component={Home} />
         <Route path="/" component={FirstPant} />
         <Route path="/cart" component={Cart} />
         <Route path="/explanation" component={Explanation} />
