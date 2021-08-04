@@ -45,7 +45,7 @@ export class YourCloths extends React.Component {
   }
 
   handleLoad(evt, val) {
-    if (val === this.state.cloths[0]) {
+    if (val === this.state.cloths[0].fileId) {
       evt.target.className = styles.selectedImg;
       this.props.onClothLoad(val);
     }
