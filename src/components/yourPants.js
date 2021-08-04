@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 const baseUrl = "https://api.mytaylor.org/"
+//const baseUrl = "http://localhost:2000/"
 const pantUrl = baseUrl + "pant";
 
 export class YourPants extends React.Component {

@@ -3,6 +3,7 @@ import axios from 'axios';
 class ClothesApiCalls { }
 
 const baseUrl = "https://api.mytaylor.org/"
+//const baseUrl = "http://localhost:2000/"
 const pantUrl = baseUrl + "pant";
 
 ClothesApiCalls.postPant = function (waistSize, hipSize, crotchSize, thighSize, length, clothImageName) {

@@ -6,7 +6,7 @@ const baseUrl = "https://api.mytaylor.org/";
 //const baseUrl = "http://localhost:2000/"
 
 const clothUrl = baseUrl + 'cloth/';
-const imgUrl = baseUrl + 'images/';
+const imgUrl = baseUrl + 'images/cloth/';
 
 export class YourCloths extends React.Component {
   constructor(props) {
@@ -23,12 +23,12 @@ export class YourCloths extends React.Component {
       return <div>
         <div>Tissus</div>
         {
-          this.state.cloths.map(cloth =>
-            <img className={styles.img} alt={cloth}
-              id={cloth} key={cloth} value={cloth} src={imgUrl + cloth}
+          this.state.cloths.map(cloth => 
+            <img className={styles.img} alt={cloth.fileId}
+              id={cloth.fileId} key={cloth.fileId} value={cloth.fileId} src={imgUrl + cloth.fileName}
               width='100' height='100'
-              onClick={evt => this.handleChange(evt, cloth)}
-              onLoad={evt => this.handleLoad(evt, cloth)} />)
+              onClick={evt => this.handleChange(evt, cloth.fileId)}
+              onLoad={evt => this.handleLoad(evt, cloth.fileId)} />)
         }
       </div>
     } else {

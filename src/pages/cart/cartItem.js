@@ -7,6 +7,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styles from './cartItem.module.scss';
 
+const baseUrl = "https://api.mytaylor.org/"
+//const baseUrl = "http://localhost:2000/"
+const imgUrl = baseUrl + 'images/pants/';
+
 const CartItem = ({ product }) => {
     const { increase, decrease, removeProduct } = useContext(CartContext);
 
@@ -18,7 +22,7 @@ const CartItem = ({ product }) => {
                         className={styles.imageProduct}
                         alt={product?.name}
                         key={product?.name}
-                        src={product?.photo} />
+                        src={imgUrl + product?.clothImageName + '.jpg'} />
                 </Col>
                 <Col className={styles.colCentered}>
                     <h5>{product?.name}</h5>
@@ -26,7 +30,7 @@ const CartItem = ({ product }) => {
 
                 </Col>
                 <Col className={styles.colCentered}>
-                    <p className="mb-0">Qty: {product?.quantity}</p>
+                    <p className="mb-0">Quantity: {product?.quantity}</p>
                 </Col>
                 <Col>
                     <button

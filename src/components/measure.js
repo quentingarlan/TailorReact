@@ -17,10 +17,6 @@ const Measure = () => {
   let thighSize = 0;
   let length = 0;
   let clothImageName = '';
-  const baseUrl = "https://api.mytaylor.org/";
-  //const baseUrl = "http://localhost:2000/"
-
-  const imgUrl = baseUrl + 'images/';
 
   const updateWaistSize = (evt) => {
     waistSize = evt.target.value;
@@ -50,15 +46,14 @@ const Measure = () => {
       price: 50,
       quantity: 1,
       name: 'pant',
-      photo: imgUrl + clothImageName,
       waistSize: waistSize,
       hipSize: hipSize,
       crotchSize: crotchSize,
       thighSize: thighSize,
       length: length,
-      imageName: clothImageName
+      clothImageName: clothImageName,
     };
-
+    
     if (isInCart(product)) {
       increase(product);
     } else {
@@ -69,7 +64,7 @@ const Measure = () => {
   }
 
   const isInCart = product => {
-    return !!cartItems.find(item => item.imageName === product.imageName
+    return !!cartItems.find(item => item.clothImageName === product.clothImageName
                 && item.waistSize === product.waistSize
                 && item.hipSize === product.hipSize
                 && item.crotchSize === product.crotchSize
