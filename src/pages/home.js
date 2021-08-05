@@ -6,7 +6,6 @@ const Home = () => {
         <div className="container">
             <title>My Tailor</title>
             <link rel="icon" href="/favicon.ico" />
-
             <main>
                 <h1 className="title">
                     My Tailor
@@ -17,7 +16,6 @@ const Home = () => {
                 </p>
 
                 <div className="grid">
-
                     <Link  to="/store" className="card">
                         <h3>Pantalons &rarr;</h3>
                         <p>Votre premier pantalon</p>
