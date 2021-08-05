@@ -25,35 +25,37 @@ const CartItem = ({ product }) => {
                         src={imgUrl + product?.clothImageName + '.jpg'} />
                 </Col>
                 <Col className={styles.colCentered}>
-                    <h5>{product?.name}</h5>
+                    <h5>{product?.name} {product.id} </h5>
                     <p>Price: {formatNumber(product?.price)} </p>
 
                 </Col>
                 <Col className={styles.colCentered}>
                     <p className="mb-0">Quantity: {product?.quantity}</p>
                 </Col>
-                <Col>
-                    <button
-                        onClick={() => increase(product)}
-                        className="btn btn-primary btn-sm">
-                        <PlusCircleIcon width={"20px"} />
-                    </button>
-                    {
-                        product?.quantity > 1 &&
+                <Col className={styles.colCentered}>
+                    <div>
                         <button
-                            onClick={() => decrease(product)}
-                            className="btn btn-danger btn-sm">
-                            <MinusCircleIcon width={"20px"} />
+                            onClick={() => increase(product)}
+                            className="btn btn-primary btn-sm">
+                            <PlusCircleIcon width={"20px"} />
                         </button>
-                    }
-                    {
-                        product?.quantity === 1 &&
-                        <button
-                            onClick={() => removeProduct(product)}
-                            className="btn btn-danger btn-sm">
-                            <TrashIcon width={"20px"} />
-                        </button>
-                    }
+                        {
+                            product?.quantity > 1 &&
+                            <button
+                                onClick={() => decrease(product)}
+                                className="btn btn-danger btn-sm">
+                                <MinusCircleIcon width={"20px"} />
+                            </button>
+                        }
+                        {
+                            product?.quantity === 1 &&
+                            <button
+                                onClick={() => removeProduct(product)}
+                                className="btn btn-danger btn-sm">
+                                <TrashIcon width={"20px"} />
+                            </button>
+                        }
+                    </div>
                 </Col>
             </Row>
         </Container>

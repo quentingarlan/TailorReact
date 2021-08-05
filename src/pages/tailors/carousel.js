@@ -9,11 +9,11 @@ export class GhanaCarousel extends Component {
             <Carousel dynamicHeight={true} className={styles.carouselCentered}>
                 <div>
                     <img src="/ghanaCloth.jpg" />
-                    <p className="legend">Ghana cloth</p>
+                    <p className="legend">Accra Merchant</p>
                 </div>
                 <div>
                     <img src="/ghanaStreet1.jpg" />
-                    <p className="legend">Accra</p>
+                    <p className="legend">Nima street</p>
                 </div>
                 <div>
                     <img src="/ghanaStreet2.jpg" />
