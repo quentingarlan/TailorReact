@@ -12,8 +12,10 @@ import '@progress/kendo-theme-default/dist/all.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useTranslation } from 'react-i18next';
 
 export default function Cart() {
+    const { t } = useTranslation();
     const { total, cartItems, itemCount, clearCart, checkout, handleCheckout } = useContext(CartContext);
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -49,42 +51,42 @@ export default function Cart() {
                     <Row>
                         <Col>
                             <Row>
-                                <Col lg='5'>Country</Col><Col lg='3'><DropDownList data={countryList} onChange={handleCountryChange}
+                                <Col lg='5'>{t('country')}</Col><Col lg='3'><DropDownList data={countryList} onChange={handleCountryChange}
                                     value={country} /></Col>
                             </Row>
                             <Row>
-                                <Col lg='5'>First Name</Col><Col lg='3'><input type="text"
+                                <Col lg='5'>{t('firstName')}</Col><Col lg='3'><input type="text"
                                     onChange={handleFirstNameChange}
                                     value={firstName} autoFocus="autofocus" /></Col>
                             </Row>
                             <Row>
-                                <Col lg='5'>Last Name</Col><Col lg='3'><input onChange={handleLastNameChange}
+                                <Col lg='5'>{t('lastName')}</Col><Col lg='3'><input onChange={handleLastNameChange}
                                     value={lastName} type="text" /></Col>
                             </Row>
                         </Col>
                         <Col>
                             <Row>
-                                <Col lg='5'>Address</Col><Col lg='3'><input onChange={handleAddressChange}
+                                <Col lg='5'>{t('address')}</Col><Col lg='3'><input onChange={handleAddressChange}
                                     value={address} type="text" /></Col>
                             </Row>
                             <Row>
-                                <Col lg='5'>Zip code</Col><Col lg='3'><input onChange={handleZipCodeChange}
+                                <Col lg='5'>{t('zipCode')}</Col><Col lg='3'><input onChange={handleZipCodeChange}
                                     value={zipCode} type="text" /></Col>
                             </Row>
                             <Row>
-                                <Col lg='5'>Email</Col><Col lg='3'><input onChange={handleEmailChange}
+                                <Col lg='5'>{t('email')}</Col><Col lg='3'><input onChange={handleEmailChange}
                                     value={mail} type="text" /></Col>
                             </Row>
                         </Col>
                     </Row>
                     <Row lg='8'>
                         {cartItems?.length > 0 ?
-                            <CartProducts items={cartItems} /> : <div className="p-3 text-center text-muted">Your cart is empty</div>
+                            <CartProducts items={cartItems} /> : <div className="p-3 text-center text-muted">{t('emptyCart')}</div>
                         }
                         {checkout &&
                             <div className="p-3 text-center text-success">
-                                <p>Checkout successfull</p>
-                                <Link to="/" className="btn btn-outline-success btn-sm">BUY MORE</Link>
+                                <p>{t('checkout')}</p>
+                                <Link to="/" className="btn btn-outline-success btn-sm">{t('buyMore')}</Link>
                             </div>
                         }
                     </Row>
@@ -95,9 +97,9 @@ export default function Cart() {
                             cartItems?.length > 0 &&
                             <div className="totalEncart">
                                 <div className="card card-body">
-                                    <p className="mb-1">Total Items</p>
+                                    <p className="mb-1">{t('totalItems')}</p>
                                     <h4 className="mb-3 txt-right">{itemCount}</h4>
-                                    <p className="mb-1">Total Payment</p>
+                                    <p className="mb-1">{t('totalPayment')}</p>
                                     <h3 className="m-0 txt-right">{formatNumber(total)}</h3>
                                     <hr className="my-4" />
                                     <div className="text-center">
@@ -109,7 +111,7 @@ export default function Cart() {
                                             amount={total}
                                             onSuccess={handleCheckout}
                                             onClick={handleSend} />
-                                        <button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>CLEAR CART</button>
+                                        <button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>{t('clearCart')}</button>
                                     </div>
                                 </div>
                             </div>

@@ -80,19 +80,19 @@ const Measure = () => {
           <Col lg='3'><img src="/measurePant.jpg" alt="mesure pantalon"/></Col>
           <Col lg='5'>
             <Row >
-              <Col>1 {t('WaistSize')} (cm)</Col><Col><input type="text" aria-label="tour de taille" onChange={evt => updateWaistSize(evt)}></input></Col>
+              <Col>1 {t('waistSize')} (cm)</Col><Col><input type="text" aria-label="tour de taille" onChange={evt => updateWaistSize(evt)}></input></Col>
             </Row>
             <Row>
-              <Col>2 {t('HipSize')} (cm)</Col><Col><input type="text" aria-label="tour de hanche" onChange={evt => updateHipSize(evt)}></input></Col>
+              <Col>2 {t('hipSize')} (cm)</Col><Col><input type="text" aria-label="tour de hanche" onChange={evt => updateHipSize(evt)}></input></Col>
             </Row>
             <Row>
-              <Col>3 {t('CrotchSize')} (cm)</Col><Col><input type="text" aria-label="fourche avant" onChange={evt => updateCrotchSize(evt)}></input></Col>
+              <Col>3 {t('crotchSize')} (cm)</Col><Col><input type="text" aria-label="fourche avant" onChange={evt => updateCrotchSize(evt)}></input></Col>
             </Row>
             <Row>
-              <Col>4 {t('ThighSize')} (cm)</Col><Col><input type="text" aria-label="Cuisse" onChange={evt => updateThighSize(evt)}></input></Col>
+              <Col>4 {t('thighSize')} (cm)</Col><Col><input type="text" aria-label="Cuisse" onChange={evt => updateThighSize(evt)}></input></Col>
             </Row>
             <Row>
-              <Col>5 {t('Length')} (cm)</Col><Col><input type="text" aria-label="Longueur" onChange={evt => updateLength(evt)}></input></Col>
+              <Col>5 {t('length')} (cm)</Col><Col><input type="text" aria-label="Longueur" onChange={evt => updateLength(evt)}></input></Col>
             </Row>
           </Col>
           <Col>
@@ -100,7 +100,7 @@ const Measure = () => {
           </Col>
         </Row>
       </Container>
-      <input className={styles.center} type="button" value="Ajouter au panier" title="Add to cart" onClick={handleSubmit}></input>
+      <input className={styles.center} type="button" value="{t('addCart')}" title="Add to cart" onClick={handleSubmit}></input>
     </div >
   );
 }

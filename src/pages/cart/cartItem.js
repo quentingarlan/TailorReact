@@ -6,12 +6,14 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styles from './cartItem.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const baseUrl = "https://api.mytaylor.org/"
 //const baseUrl = "http://localhost:2000/"
 const imgUrl = baseUrl + 'images/pants/';
 
 const CartItem = ({ product }) => {
+    const { t } = useTranslation();
     const { increase, decrease, removeProduct } = useContext(CartContext);
 
     return (
@@ -26,11 +28,11 @@ const CartItem = ({ product }) => {
                 </Col>
                 <Col className={styles.colCentered}>
                     <h5>{product?.name} {product.id} </h5>
-                    <p>Price: {formatNumber(product?.price)} </p>
+                    <p>{t('price')}: {formatNumber(product?.price)} </p>
 
                 </Col>
                 <Col className={styles.colCentered}>
-                    <p className="mb-0">Quantity: {product?.quantity}</p>
+                    <p className="mb-0">{t('quantity')}: {product?.quantity}</p>
                 </Col>
                 <Col className={styles.colCentered}>
                     <div>
