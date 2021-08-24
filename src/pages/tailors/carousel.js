@@ -8,15 +8,15 @@ export class GhanaCarousel extends Component {
         return (
             <Carousel dynamicHeight={true} className={styles.carouselCentered}>
                 <div>
-                    <img src="/ghanaCloth.jpg" />
+                    <img src="/ghanaCloth.jpg" alt="ghana cloth"/>
                     <p className="legend">Accra Merchant</p>
                 </div>
                 <div>
-                    <img src="/ghanaStreet1.jpg" />
+                    <img src="/ghanaStreet1.jpg" alt="ghana street"/>
                     <p className="legend">Nima street</p>
                 </div>
                 <div>
-                    <img src="/ghanaStreet2.jpg" />
+                    <img src="/ghanaStreet2.jpg" alt="ghana Street cloth"/>
                     <p className="legend">Cloth</p>
                 </div>
             </Carousel>

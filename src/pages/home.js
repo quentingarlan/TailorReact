@@ -18,17 +18,17 @@ const Home = () => {
                 <div className="grid">
                     <Link  to="/store" className="card">
                         <h3>Pantalons &rarr;</h3>
-                        <p>Votre premier pantalon</p>
+                        <p>Créez Votre premier pantalon</p>
                     </Link >
 
                     <Link to="/tailors" className="card">
-                        <h3>Nos tailleurs &rarr;</h3>
-                        <p>Découvrez nos tailleurs</p>
+                        <h3>Les tailleurs &rarr;</h3>
+                        <p>Découvrez les tailleurs</p>
                     </Link>
 
                     <Link to="/explanation" className="card">
                         <h3>La démarche &rarr;</h3>
-                        <p>Découvrez my tailor</p>
+                        <p>On explique my tailor</p>
                     </Link>
                 </div>
             </main>

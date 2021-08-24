@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { YourCloths } from './yourCloths'
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { CartContext } from '../contexts/cartContext';
 import styles from './measure.module.scss';
 
@@ -99,7 +98,7 @@ const Measure = () => {
           </Col>
         </Row>
       </Container>
-      <input className={styles.center} type="button" value="Ajouter" title="Add" onClick={handleSubmit}></input>
+      <input className={styles.center} type="button" value="Ajouter au panier" title="Add to cart" onClick={handleSubmit}></input>
     </div >
   );
 }

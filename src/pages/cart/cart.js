@@ -42,7 +42,7 @@ export default function Cart() {
     const handleCountryChange = ({ target }) => {
         setCountry(target.value);
     };
-    return <Layout title="Cart" description="This is the Cart page">
+    return <Layout title="Cart" description="This is the cart page">
         <Container>
             <Row>
                 <Col lg='10'>
