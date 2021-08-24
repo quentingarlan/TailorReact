@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { CartContext } from '../../contexts/cartContext';
 import { CartIcon } from '../../components/icons'
 import styles from './header.module.scss';
+import LanguageToggle from '../../components/languageToggle';
 
 const Header = () => {
-
    const { itemCount } = useContext(CartContext);
 
    return (
@@ -13,6 +13,7 @@ const Header = () => {
          <div><Link to='/'><h3>MY TAILOR</h3></Link></div>
          <Link to='/store'>Store</Link>
          <Link to='/cart'> <CartIcon /> Cart ({itemCount})</Link>
+         <LanguageToggle></LanguageToggle>
       </header>
    );
 }
