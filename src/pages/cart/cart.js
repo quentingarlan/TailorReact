@@ -8,7 +8,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 import { functions } from '../../api/MailApiCall'
 import { DropDownList } from '@progress/kendo-react-dropdowns';
 import { countryList } from '../../components/countryList';
-import '@progress/kendo-theme-default/dist/all.css';
+// import '@progress/kendo-theme-default/dist/all.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
