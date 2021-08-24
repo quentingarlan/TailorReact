@@ -6,9 +6,11 @@ import Col from 'react-bootstrap/Col';
 import { YourCloths } from './yourCloths'
 import { CartContext } from '../contexts/cartContext';
 import styles from './measure.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const Measure = () => {
   const { addProduct, cartItems, increase } = useContext(CartContext);
+  const { t } = useTranslation();
 
   let waistSize = 0;
   let hipSize = 0;
@@ -78,7 +80,7 @@ const Measure = () => {
           <Col lg='3'><img src="/measurePant.jpg" alt="mesure pantalon"/></Col>
           <Col lg='5'>
             <Row >
-              <Col>1 Tour de taille (cm)</Col><Col><input type="text" aria-label="tour de taille" onChange={evt => updateWaistSize(evt)}></input></Col>
+              <Col>{t('WaistSize')}</Col><Col><input type="text" aria-label="tour de taille" onChange={evt => updateWaistSize(evt)}></input></Col>
             </Row>
             <Row>
               <Col>2 Tour de hanche (cm)</Col><Col><input type="text" aria-label="tour de hanche" onChange={evt => updateHipSize(evt)}></input></Col>
