@@ -80,19 +80,19 @@ const Measure = () => {
           <Col lg='3'><img src="/measurePant.jpg" alt="mesure pantalon"/></Col>
           <Col lg='5'>
             <Row >
-              <Col>{t('WaistSize')}</Col><Col><input type="text" aria-label="tour de taille" onChange={evt => updateWaistSize(evt)}></input></Col>
+              <Col>1 {t('WaistSize')} (cm)</Col><Col><input type="text" aria-label="tour de taille" onChange={evt => updateWaistSize(evt)}></input></Col>
             </Row>
             <Row>
-              <Col>2 Tour de hanche (cm)</Col><Col><input type="text" aria-label="tour de hanche" onChange={evt => updateHipSize(evt)}></input></Col>
+              <Col>2 {t('HipSize')} (cm)</Col><Col><input type="text" aria-label="tour de hanche" onChange={evt => updateHipSize(evt)}></input></Col>
             </Row>
             <Row>
-              <Col>3 Fourche avant (cm)</Col><Col><input type="text" aria-label="fourche avant" onChange={evt => updateCrotchSize(evt)}></input></Col>
+              <Col>3 {t('CrotchSize')} (cm)</Col><Col><input type="text" aria-label="fourche avant" onChange={evt => updateCrotchSize(evt)}></input></Col>
             </Row>
             <Row>
-              <Col>4 Cuisse (cm)</Col><Col><input type="text" aria-label="Cuisse" onChange={evt => updateThighSize(evt)}></input></Col>
+              <Col>4 {t('ThighSize')} (cm)</Col><Col><input type="text" aria-label="Cuisse" onChange={evt => updateThighSize(evt)}></input></Col>
             </Row>
             <Row>
-              <Col>5 Longueur (cm)</Col><Col><input type="text" aria-label="Longueur" onChange={evt => updateLength(evt)}></input></Col>
+              <Col>5 {t('Length')} (cm)</Col><Col><input type="text" aria-label="Longueur" onChange={evt => updateLength(evt)}></input></Col>
             </Row>
           </Col>
           <Col>

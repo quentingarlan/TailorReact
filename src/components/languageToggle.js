@@ -1,14 +1,14 @@
 import React from "react";
 import styles from './languageToggle.module.scss';
+import i18next from "i18next";
 
-const languageOptions = [
-    { key: "English", text: "English", value: "en" },
-    { key: "French", text: "French", value: "fr" }
-];
-const LanguageToggle = props => {
+const LanguageToggle = () => {
 
-    const handleChange = (event, data) => {
-        props.setLanguage(data.value);
+    const handleChange = (data) => {
+        i18next.changeLanguage(data, (err, t) => {
+            if (err) return console.log('something went wrong loading', err);
+            t('key'); // -> same as i18next.t
+        });
     };
 
     return (

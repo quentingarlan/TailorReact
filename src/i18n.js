@@ -1,4 +1,4 @@
-import i18n from "i18next";
+import i18next from 'i18next';
 import { initReactI18next } from "react-i18next";
 import { translations } from './translations';
 
@@ -7,7 +7,7 @@ import { translations } from './translations';
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 const resources = translations;
 
-i18n
+i18next
     .use(initReactI18next) // passes i18n down to react-i18next
     .init({
         resources,
@@ -20,4 +20,4 @@ i18n
         }
     });
 
-export default i18n;
+export default i18next;

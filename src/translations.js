@@ -5,13 +5,21 @@ export const translations = {
     en: {
         translation: {
             "Welcome": "Welcome to Ghana Tailor",
-            "WaistSize": "1 Waist size (cm)",
+            "WaistSize": "Waist size",
+            "HipSize": "Hip size",
+            "CrotchSize": "Crotch size",
+            "ThighSize": "Thigh size",
+            "Length": "Length",
         }
     },
     fr: {
         translation: {
             "Welcome": "Bienvenue",
-            "WaistSize": "1 tour de taille (cm)",
+            "WaistSize": "Tour de taille",
+            "HipSize": "Tour de hanche",
+            "CrotchSize": "Fourche avant",
+            "ThighSize": "Cuisse",
+            "Length": "Longueur ",
         }
     }
 };
