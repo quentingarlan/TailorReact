@@ -26,7 +26,14 @@ export const translations = {
             "totalPayment": "Total Payment",
             "clearCart" : "Clear cart",
             "price": "Price",
-            "quantity": "Quantity"
+            "quantity": "Quantity",
+            "tailoredCloth" : "Your tailored clothes",
+            "pants": "Pants",
+            "createPants": "Create your first pant",
+            "tailors": "the tailors",
+            "discoverTailors": "Discover the tailors",
+            "explanation": "The approach",
+            "explanationText": "Explaining ghana tailor"
         }
     },
     fr: {
@@ -53,7 +60,14 @@ export const translations = {
             "totalPayment": "Total à payer",
             "clearCart" : "Vider le panier",
             "price": "Prix",
-            "quantity": "Quantité"
+            "quantity": "Quantité",
+            "tailoredCloth" : "Vos vétements sur mesure",
+            "pants": "Pantalons",
+            "createPants": "Créez Votre premier pantalon",
+            "tailors": "Les tailleurs",
+            "discoverTailors": "Découvrez les tailleurs",
+            "explanation": "La démarche",
+            "explanationText": "On explique my tailor"
         }
     }
 };

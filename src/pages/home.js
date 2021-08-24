@@ -1,34 +1,38 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import LanguageToggle from '../components/languageToggle';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation();
     return (
         <div className="container">
-            <title>My Tailor</title>
+            <title>Ghana Tailor</title>
             <link rel="icon" href="/favicon.ico" />
             <main>
                 <h1 className="title">
-                    My Tailor
+                    Ghana Tailor
                 </h1>
 
                 <p className="description">
-                    Vos vétements sur mesure
+                {t('tailoredCloth')}
                 </p>
+                <LanguageToggle></LanguageToggle>
 
                 <div className="grid">
                     <Link  to="/store" className="card">
-                        <h3>Pantalons &rarr;</h3>
-                        <p>Créez Votre premier pantalon</p>
+                        <h3>{t('pants')} &rarr;</h3>
+                        <p>{t('createPants')}</p>
                     </Link >
 
                     <Link to="/tailors" className="card">
-                        <h3>Les tailleurs &rarr;</h3>
-                        <p>Découvrez les tailleurs</p>
+                        <h3>{t('tailors')} &rarr;</h3>
+                        <p>{t('discoverTailors')}</p>
                     </Link>
 
                     <Link to="/explanation" className="card">
-                        <h3>La démarche &rarr;</h3>
-                        <p>On explique my tailor</p>
+                        <h3>{t('explanation')} &rarr;</h3>
+                        <p>{t('explanationText')}</p>
                     </Link>
                 </div>
             </main>

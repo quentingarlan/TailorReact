@@ -100,7 +100,7 @@ const Measure = () => {
           </Col>
         </Row>
       </Container>
-      <input className={styles.center} type="button" value="{t('addCart')}" title="Add to cart" onClick={handleSubmit}></input>
+      <input className={styles.center} type="button" value={t('addCart')} title="Add to cart" onClick={handleSubmit}></input>
     </div >
   );
 }

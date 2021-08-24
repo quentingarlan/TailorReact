@@ -12,7 +12,7 @@ const LanguageToggle = () => {
     };
 
     return (
-        <div>
+        <div className={styles.flagContainer}>
             <img src="/frenchFlag.png" alt="french flag" className={styles.flagImage} onClick={() => handleChange('fr')} />
             <img src="/UkFlag.png" alt="english flag" className={styles.flagImage} onClick={() => handleChange('en')} />
         </div>
