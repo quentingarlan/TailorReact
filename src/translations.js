@@ -28,12 +28,13 @@ export const translations = {
             "price": "Price",
             "quantity": "Quantity",
             "tailoredCloth" : "Your tailored clothes",
+            "pant": "pant",
             "pants": "Pants",
             "createPants": "Create your first pant",
             "tailors": "the tailors",
             "discoverTailors": "Discover the tailors",
             "explanation": "The approach",
-            "explanationText": "Explaining ghana tailor"
+            "explanationText": "Explaining ghana tailor",
         }
     },
     fr: {
@@ -62,6 +63,7 @@ export const translations = {
             "price": "Prix",
             "quantity": "Quantité",
             "tailoredCloth" : "Vos vétements sur mesure",
+            "pant": "pantalon",
             "pants": "Pantalons",
             "createPants": "Créez Votre premier pantalon",
             "tailors": "Les tailleurs",
