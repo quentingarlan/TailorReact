@@ -18,7 +18,7 @@ export class YourCloths extends React.Component {
   }
 
   render() {
-    if (this.state.cloths) {
+    if (this.state.cloths.length > 0) {
       // this.props.onClothLoad(this.state.cloths[0]);
       return <div>
         <div>Tissus</div>

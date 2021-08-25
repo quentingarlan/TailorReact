@@ -12,13 +12,12 @@ const Measure = () => {
   const { addProduct, cartItems, increase } = useContext(CartContext);
   const { t } = useTranslation();
 
-  let clothImageName = '';
-
   const [waistSize, updateWaistSize] = useState("");
   const [hipSize, updateHipSize] = useState("");
   const [crotchSize, updateCrotchSize] = useState("");
   const [thighSize, updateThighSize] = useState("");
   const [length, updateLength] = useState("");
+  const [clothImageName, updateClothImageName] = useState("");
 
   const handleWaistSizeChange = ({ target }) => {
     updateWaistSize(target.value);
@@ -35,13 +34,9 @@ const Measure = () => {
   const handleLengthChange = ({ target }) => {
     updateLength(target.value);
   };
-
-  const updateSelectedCloth = (selectedCloth) => {
-    clothImageName = selectedCloth;
-  }
-  const updateClothLoad = (defaultCloth) => {
-    clothImageName = defaultCloth;
-  }
+  const handleClothImageNameChange = ( target ) => {
+      updateClothImageName(target);
+  };
 
   const handleSubmit = () => {
 
@@ -72,7 +67,6 @@ const Measure = () => {
     } else {
       addProduct(product);
     }
-
     functions.postPant(waistSize, hipSize, crotchSize, thighSize, length, clothImageName);
   }
 
@@ -113,7 +107,7 @@ const Measure = () => {
             </Row>
           </Col>
           <Col>
-            <YourCloths onClothChange={evt => updateSelectedCloth(evt)} onClothLoad={val => updateClothLoad(val)} ></YourCloths>
+            <YourCloths onClothChange={evt => handleClothImageNameChange(evt)} onClothLoad={val => handleClothImageNameChange(val)} ></YourCloths>
           </Col>
         </Row>
       </Container>
