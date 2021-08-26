@@ -8,8 +8,8 @@ import Col from 'react-bootstrap/Col';
 import styles from './cartItem.module.scss';
 import { useTranslation } from 'react-i18next';
 
-//const baseUrl = "https://api.mytaylor.org/"
-const baseUrl = "http://localhost:2000/"
+const baseUrl = "https://api.mytaylor.org/"
+// const baseUrl = "http://localhost:2000/"
 const imgUrl = baseUrl + 'images/pants/';
 
 const CartItem = ({ product }) => {
