@@ -99,6 +99,8 @@ export default function Cart() {
                                 <div className="card card-body">
                                     <p className="mb-1">{t('totalItems')}</p>
                                     <h4 className="mb-3 txt-right">{itemCount}</h4>
+                                    <p className="mb-1">{t('shipping')}</p>
+                                    <h3 className="mb-3 txt-right">{formatNumber(20)}</h3>
                                     <p className="mb-1">{t('totalPayment')}</p>
                                     <h3 className="m-0 txt-right">{formatNumber(total)}</h3>
                                     <hr className="my-4" />
@@ -106,7 +108,8 @@ export default function Cart() {
                                         <PayPalButton
                                             forceReRender
                                             options={{
-                                                clientId: "Afzfteg4p3l2fx7k_QJgwQKiNUFMp2EDNRk3Pw5jf52inYxuLHlPCt0IhFjVeof-LJ9Y8LZL31D_Pvng"
+                                                clientId: "Afzfteg4p3l2fx7k_QJgwQKiNUFMp2EDNRk3Pw5jf52inYxuLHlPCt0IhFjVeof-LJ9Y8LZL31D_Pvng",
+                                                currency:"USD"
                                             }}
                                             amount={total}
                                             onSuccess={handleCheckout}

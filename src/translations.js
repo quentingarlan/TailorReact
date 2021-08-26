@@ -35,6 +35,7 @@ export const translations = {
             "discoverTailors": "Discover the tailors",
             "explanation": "The approach",
             "explanationText": "Explaining ghana tailor",
+            "shipping": "Shipping"
         }
     },
     fr: {
@@ -69,7 +70,8 @@ export const translations = {
             "tailors": "Les tailleurs",
             "discoverTailors": "Découvrez les tailleurs",
             "explanation": "La démarche",
-            "explanationText": "On explique my tailor"
+            "explanationText": "On explique my tailor",
+            "shipping": "Livraison"
         }
     }
 };
