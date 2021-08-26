@@ -6,9 +6,9 @@ import { CartContext } from '../../contexts/cartContext';
 import { formatNumber } from '../../helpers/utils';
 import { PayPalButton } from "react-paypal-button-v2";
 import { functions } from '../../api/MailApiCall';
-import { DropDownList } from '@progress/kendo-react-dropdowns';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 import { countryList } from '../../components/countryList';
-// import '@progress/kendo-theme-default/dist/all.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -41,7 +41,7 @@ export default function Cart() {
     const handleEmailChange = ({ target }) => {
         setEmail(target.value);
     };
-    const handleCountryChange = ({ target }) => {
+    const handleCountryChange = ( target ) => {
         setCountry(target.value);
     };
     return <Layout title="Cart" description="This is the cart page">
@@ -51,30 +51,35 @@ export default function Cart() {
                     <Row>
                         <Col>
                             <Row>
-                                <Col lg='5'>{t('country')}</Col><Col lg='3'><DropDownList data={countryList} onChange={handleCountryChange}
-                                    value={country} /></Col>
+                                <Col lg='5'>{t('country')}</Col>
+                                <Col lg='5'><Dropdown options={countryList} onChange={handleCountryChange} value={country} /></Col>
                             </Row>
                             <Row>
-                                <Col lg='5'>{t('firstName')}</Col><Col lg='3'><input type="text"
+                                <Col lg='5'>{t('firstName')}</Col>
+                                <Col lg='3'><input type="text"
                                     onChange={handleFirstNameChange}
                                     value={firstName} autoFocus="autofocus" /></Col>
                             </Row>
                             <Row>
-                                <Col lg='5'>{t('lastName')}</Col><Col lg='3'><input onChange={handleLastNameChange}
+                                <Col lg='5'>{t('lastName')}</Col>
+                                <Col lg='3'><input onChange={handleLastNameChange}
                                     value={lastName} type="text" /></Col>
                             </Row>
                         </Col>
                         <Col>
                             <Row>
-                                <Col lg='5'>{t('address')}</Col><Col lg='3'><input onChange={handleAddressChange}
+                                <Col lg='5'>{t('address')}</Col>
+                                <Col lg='3'><input onChange={handleAddressChange}
                                     value={address} type="text" /></Col>
                             </Row>
                             <Row>
-                                <Col lg='5'>{t('zipCode')}</Col><Col lg='3'><input onChange={handleZipCodeChange}
+                                <Col lg='5'>{t('zipCode')}</Col>
+                                <Col lg='3'><input onChange={handleZipCodeChange}
                                     value={zipCode} type="text" /></Col>
                             </Row>
                             <Row>
-                                <Col lg='5'>{t('email')}</Col><Col lg='3'><input onChange={handleEmailChange}
+                                <Col lg='5'>{t('email')}</Col>
+                                <Col lg='3'><input onChange={handleEmailChange}
                                     value={mail} type="text" /></Col>
                             </Row>
                         </Col>

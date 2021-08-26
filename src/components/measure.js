@@ -8,8 +8,8 @@ import { CartContext } from '../contexts/cartContext';
 import styles from './measure.module.scss';
 import { useTranslation } from 'react-i18next';
 import { sizesList } from './sizesList';
-import { DropDownList } from '@progress/kendo-react-dropdowns';
-// import '@progress/kendo-theme-default/dist/all.css';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 const Measure = () => {
   const { addProduct, cartItems, increase } = useContext(CartContext);
@@ -97,7 +97,7 @@ const Measure = () => {
     };
   }
 
-  const handleAutoSizeChange = ({ target }) => {
+  const handleAutoSizeChange = ( target ) => {
     updateAutoSize(target.value);
     changeSizes(target.value, sex);
   }
@@ -178,7 +178,7 @@ const Measure = () => {
                   <input type="radio" id="M" name="sex" value="M" onChange={handleSexChange} checked={sex === "M"} />
                   <label htmlFor="M">{t('male')}</label></div>
               </Col>
-              <Col><DropDownList data={sizesList} onChange={handleAutoSizeChange}
+              <Col><Dropdown options={sizesList} onChange={handleAutoSizeChange}
                 value={autoSize} /></Col>
             </Row>
             <Row >
