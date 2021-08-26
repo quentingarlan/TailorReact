@@ -36,9 +36,9 @@ export const translations = {
             "explanation": "The approach",
             "explanationText": "Explaining Ghana tailor",
             "shipping": "Shipping",
-            "autoSize": "measures",
-            "male": "male",
-            "female": "female"
+            "autoSize": "Measures",
+            "male": "Man",
+            "female": "Woman"
         }
     },
     fr: {
@@ -75,7 +75,7 @@ export const translations = {
             "explanation": "La démarche",
             "explanationText": "On explique Ghana tailor",
             "shipping": "Livraison",
-            "autoSize": "mesures",
+            "autoSize": "Mesures",
             "male": "Homme",
             "female": "Femme"
         }
