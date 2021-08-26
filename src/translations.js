@@ -18,8 +18,8 @@ export const translations = {
             "firstName": "First name",
             "lastName": "Last name",
             "address": "Address",
-            "email": "email",
-            "emptyCart": "your cart is empty",
+            "email": "Email",
+            "emptyCart": "Your cart is empty",
             "checkout" : "Checkout successfull",
             "buyMore": "BUY MORE",
             "totalItems": "Total Items",
@@ -34,8 +34,11 @@ export const translations = {
             "tailors": "the tailors",
             "discoverTailors": "Discover the tailors",
             "explanation": "The approach",
-            "explanationText": "Explaining ghana tailor",
-            "shipping": "Shipping"
+            "explanationText": "Explaining Ghana tailor",
+            "shipping": "Shipping",
+            "autoSize": "measures",
+            "male": "male",
+            "female": "female"
         }
     },
     fr: {
@@ -54,7 +57,7 @@ export const translations = {
             "firstName": "Prénom",
             "lastName": "Nom",
             "address": "Addresse",
-            "email": "email",
+            "email": "Email",
             "emptyCart": "votre panier est vide",
             "checkout" : "Succès du paiement ",
             "buyMore": "Acheter plus",
@@ -70,8 +73,11 @@ export const translations = {
             "tailors": "Les tailleurs",
             "discoverTailors": "Découvrez les tailleurs",
             "explanation": "La démarche",
-            "explanationText": "On explique my tailor",
-            "shipping": "Livraison"
+            "explanationText": "On explique Ghana tailor",
+            "shipping": "Livraison",
+            "autoSize": "mesures",
+            "male": "Homme",
+            "female": "Femme"
         }
     }
 };

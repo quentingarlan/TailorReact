@@ -7,18 +7,99 @@ import { YourCloths } from './yourCloths'
 import { CartContext } from '../contexts/cartContext';
 import styles from './measure.module.scss';
 import { useTranslation } from 'react-i18next';
+import { sizesList } from './sizesList';
+import { DropDownList } from '@progress/kendo-react-dropdowns';
+import '@progress/kendo-theme-default/dist/all.css';
 
 const Measure = () => {
   const { addProduct, cartItems, increase } = useContext(CartContext);
   const { t } = useTranslation();
 
-  const [waistSize, updateWaistSize] = useState("");
-  const [hipSize, updateHipSize] = useState("");
-  const [crotchSize, updateCrotchSize] = useState("");
-  const [thighSize, updateThighSize] = useState("");
-  const [length, updateLength] = useState("");
+  const [waistSize, updateWaistSize] = useState("68");
+  const [hipSize, updateHipSize] = useState("92");
+  const [crotchSize, updateCrotchSize] = useState("23.2");
+  const [thighSize, updateThighSize] = useState("57");
+  const [length, updateLength] = useState("95");
   const [clothImageName, updateClothImageName] = useState("");
+  const [autoSize, updateAutoSize] = useState("L");
+  const [sex, updateSex] = useState("F");
 
+  const handleAutoSizeChange = ({ target }) => {
+    updateAutoSize(target.value);
+    if (sex === "F") {
+      switch (target.value) {
+        case "S": {
+          updateWaistSize("68");
+          updateHipSize("92");
+          updateThighSize("57");
+          updateLength("95");
+          updateCrotchSize("23.2");
+          break;
+        }
+        case "M": {
+          updateWaistSize("72");
+          updateHipSize("96");
+          updateThighSize("32.7");
+          updateLength("96");
+          updateCrotchSize("23.7");
+          break;
+        } case "L": {
+          updateWaistSize("76");
+          updateHipSize("100");
+          updateThighSize("33.7");
+          updateLength("97");
+          updateCrotchSize("24.2");
+          break;
+        } case "XL": {
+          updateWaistSize("80");
+          updateHipSize("104");
+          updateThighSize("34.7");
+          updateLength("98");
+          updateCrotchSize("24.7");
+          break;
+        }
+        default: { }
+      }
+    }
+    else {
+      switch (target.value) {
+        case "S": {
+          updateWaistSize("66");
+          updateHipSize("94");
+          updateThighSize("31.7");
+          updateLength("102");
+          updateCrotchSize("23.2");
+          break;
+        }
+        case "M": {
+          updateWaistSize("76");
+          updateHipSize("99");
+          updateThighSize("32.7");
+          updateLength("104");
+          updateCrotchSize("23.7");
+          break;
+        } case "L": {
+          updateWaistSize("81");
+          updateHipSize("104");
+          updateThighSize("33.7");
+          updateLength("107");
+          updateCrotchSize("24.2");
+          break;
+        } case "XL": {
+          updateWaistSize("91");
+          updateHipSize("109");
+          updateThighSize("34.7");
+          updateLength("112");
+          updateCrotchSize("24.7");
+          break;
+        }
+        default: { }
+      }
+    };
+  }
+  const handleSexChange = ({ target }) => {
+    updateSex(target.value);
+  };
   const handleWaistSizeChange = ({ target }) => {
     updateWaistSize(target.value);
   };
@@ -34,18 +115,16 @@ const Measure = () => {
   const handleLengthChange = ({ target }) => {
     updateLength(target.value);
   };
-  const handleClothImageNameChange = ( target ) => {
-      updateClothImageName(target);
+  const handleClothImageNameChange = (target) => {
+    updateClothImageName(target);
   };
 
   const handleSubmit = () => {
-
+    var validationErrorTxt = document.getElementById("validationError");
     if (!waistSize || !hipSize || !crotchSize || !thighSize || !length) {
-      var validationErrorTxt = document.getElementById("validationError");
       if (validationErrorTxt) { validationErrorTxt.innerHTML = 'All sizes must be filled with numbers only'; }
       return;
     } else {
-      var validationErrorTxt = document.getElementById("validationError");
       if (validationErrorTxt) { validationErrorTxt.innerHTML = ''; }
     }
 
@@ -85,6 +164,18 @@ const Measure = () => {
         <Row className="align-items-center">
           <Col lg='3'><img src="/measurePant.jpg" alt="mesure pantalon" /></Col>
           <Col lg='5'>
+            <Row >
+              <Col>{t('autoSize')}</Col>
+              <Col>
+                <div>
+                  <input type="radio" id="F" name="sex" value="F" onChange={handleSexChange} checked={sex === "F"} />
+                  <label htmlFor="F">{t('female')}</label></div><div>
+                  <input type="radio" id="M" name="sex" value="M" onChange={handleSexChange} checked={sex === "M"} />
+                  <label htmlFor="M">{t('male')}</label></div>
+              </Col>
+              <Col><DropDownList data={sizesList} onChange={handleAutoSizeChange}
+                value={autoSize} /></Col>
+            </Row>
             <Row >
               <Col>1 {t('waistSize')} (cm)</Col>
               <Col><input type="text" aria-label="tour de taille" onChange={evt => handleWaistSizeChange(evt)} value={waistSize}></input></Col>

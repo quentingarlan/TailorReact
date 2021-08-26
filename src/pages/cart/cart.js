@@ -5,7 +5,7 @@ import CartProducts from './cartProduct';
 import { CartContext } from '../../contexts/cartContext';
 import { formatNumber } from '../../helpers/utils';
 import { PayPalButton } from "react-paypal-button-v2";
-import { functions } from '../../api/MailApiCall'
+import { functions } from '../../api/MailApiCall';
 import { DropDownList } from '@progress/kendo-react-dropdowns';
 import { countryList } from '../../components/countryList';
 // import '@progress/kendo-theme-default/dist/all.css';
