@@ -9,7 +9,7 @@ import styles from './measure.module.scss';
 import { useTranslation } from 'react-i18next';
 import { sizesList } from './sizesList';
 import { DropDownList } from '@progress/kendo-react-dropdowns';
-import '@progress/kendo-theme-default/dist/all.css';
+// import '@progress/kendo-theme-default/dist/all.css';
 
 const Measure = () => {
   const { addProduct, cartItems, increase } = useContext(CartContext);
@@ -24,10 +24,9 @@ const Measure = () => {
   const [autoSize, updateAutoSize] = useState("L");
   const [sex, updateSex] = useState("F");
 
-  const handleAutoSizeChange = ({ target }) => {
-    updateAutoSize(target.value);
-    if (sex === "F") {
-      switch (target.value) {
+  const changeSizes = (sizeValue, sexValue) => {
+    if (sexValue === "F") {
+      switch (sizeValue) {
         case "S": {
           updateWaistSize("68");
           updateHipSize("92");
@@ -62,7 +61,7 @@ const Measure = () => {
       }
     }
     else {
-      switch (target.value) {
+      switch (sizeValue) {
         case "S": {
           updateWaistSize("66");
           updateHipSize("94");
@@ -97,8 +96,14 @@ const Measure = () => {
       }
     };
   }
+
+  const handleAutoSizeChange = ({ target }) => {
+    updateAutoSize(target.value);
+    changeSizes(target.value, sex);
+  }
   const handleSexChange = ({ target }) => {
     updateSex(target.value);
+    changeSizes(autoSize, target.value);
   };
   const handleWaistSizeChange = ({ target }) => {
     updateWaistSize(target.value);

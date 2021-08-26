@@ -8,8 +8,8 @@ import Col from 'react-bootstrap/Col';
 import styles from './cartItem.module.scss';
 import { useTranslation } from 'react-i18next';
 
-const baseUrl = "https://api.mytaylor.org/"
-//const baseUrl = "http://localhost:2000/"
+//const baseUrl = "https://api.mytaylor.org/"
+const baseUrl = "http://localhost:2000/"
 const imgUrl = baseUrl + 'images/pants/';
 
 const CartItem = ({ product }) => {
@@ -27,9 +27,13 @@ const CartItem = ({ product }) => {
                         src={imgUrl + product?.clothImageName + '.jpg'} />
                 </Col>
                 <Col className={styles.colCentered}>
-                    <h5>{product?.name} {product.id} </h5>
-                    <p>{t('price')}: {formatNumber(product?.price)} </p>
-
+                    <h4>{product?.name} {product?.id} </h4>
+                    <h5>{t('price')}: {formatNumber(product?.price)} </h5>
+                    <div>{t('waistSize')}: {product?.waistSize} </div>
+                    <div>{t('hipSize')}: {product?.hipSize} </div>
+                    <div>{t('crotchSize')}: {product?.crotchSize} </div>
+                    <div>{t('thighSize')}: {product?.thighSize} </div>
+                    <div>{t('length')}: {product?.length} </div>
                 </Col>
                 <Col className={styles.colCentered}>
                     <p className="mb-0">{t('quantity')}: {product?.quantity}</p>
