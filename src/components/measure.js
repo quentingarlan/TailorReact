@@ -32,7 +32,7 @@ const Measure = () => {
           updateHipSize("92");
           updateThighSize("57");
           updateLength("95");
-          updateCrotchSize("23.2");
+          updateCrotchSize("32.5");
           break;
         }
         case "M": {
@@ -40,21 +40,21 @@ const Measure = () => {
           updateHipSize("96");
           updateThighSize("32.7");
           updateLength("96");
-          updateCrotchSize("23.7");
+          updateCrotchSize("33");
           break;
         } case "L": {
           updateWaistSize("76");
           updateHipSize("100");
           updateThighSize("33.7");
           updateLength("97");
-          updateCrotchSize("24.2");
+          updateCrotchSize("33.5");
           break;
         } case "XL": {
           updateWaistSize("80");
           updateHipSize("104");
           updateThighSize("34.7");
           updateLength("98");
-          updateCrotchSize("24.7");
+          updateCrotchSize("34");
           break;
         }
         default: { }
@@ -67,7 +67,7 @@ const Measure = () => {
           updateHipSize("94");
           updateThighSize("31.7");
           updateLength("102");
-          updateCrotchSize("23.2");
+          updateCrotchSize("32.5");
           break;
         }
         case "M": {
@@ -75,21 +75,21 @@ const Measure = () => {
           updateHipSize("99");
           updateThighSize("32.7");
           updateLength("104");
-          updateCrotchSize("23.7");
+          updateCrotchSize("33");
           break;
         } case "L": {
           updateWaistSize("81");
           updateHipSize("104");
           updateThighSize("33.7");
           updateLength("107");
-          updateCrotchSize("24.2");
+          updateCrotchSize("33.5");
           break;
         } case "XL": {
           updateWaistSize("91");
           updateHipSize("109");
           updateThighSize("34.7");
           updateLength("112");
-          updateCrotchSize("24.7");
+          updateCrotchSize("34");
           break;
         }
         default: { }
