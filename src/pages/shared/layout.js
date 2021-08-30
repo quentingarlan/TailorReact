@@ -9,8 +9,8 @@ const Layout = ({title, description, children}) => {
     return ( 
             <div suppressHydrationWarning>
                 <Helmet>
-                    <title>{ title ? "My tailor " + title : "My tailor website" }</title>
-                    <meta name = "description" content={ description || "My tailor website" } />
+                    <title>{ title ? "Ghana tailor " + title : "Ghana tailor website" }</title>
+                    <meta name = "description" content={ description || "Ghana tailor website" } />
                 </Helmet>
                 <Header/>
                     <main className={styles.divLayout}>

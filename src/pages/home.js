@@ -43,7 +43,7 @@ const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <img src="/clothes.svg" alt="my tailor Logo" className="logo" />
+                    <img src="/clothes.svg" alt="ghana tailor Logo" className="logo" />
                 </a>
             </footer>
 

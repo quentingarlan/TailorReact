@@ -184,11 +184,11 @@ const Measure = () => {
               <Col>
                 <Row>
                   <Col>
-                    <input type="radio" id="F" name="sex" value="F" onChange={handleSexChange} checked={sex === "F"} />
+                    <input type="radio" id="F" name="sex" value="F" onChange={handleSexChange} className={styles.radioSex} checked={sex === "F"} />
                     <label htmlFor="F">{t('female')}</label>
                   </Col>
                   <Col>
-                    <input type="radio" id="M" name="sex" value="M" onChange={handleSexChange} checked={sex === "M"} />
+                    <input type="radio" id="M" name="sex" value="M" onChange={handleSexChange} className={styles.radioSex} checked={sex === "M"} />
                     <label htmlFor="M">{t('male')}</label>
                   </Col>
                 </Row>
@@ -198,23 +198,23 @@ const Measure = () => {
             </Row>
             <Row >
               <Col>1 {t('waistSize')} (cm)</Col>
-              <Col><input type="text" aria-label="tour de taille" onChange={evt => handleWaistSizeChange(evt)} value={waistSize}></input></Col>
+              <Col><input type="text" className={styles.inputs} aria-label="tour de taille" onChange={evt => handleWaistSizeChange(evt)} value={waistSize}></input></Col>
             </Row>
             <Row>
               <Col>2 {t('hipSize')} (cm)</Col>
-              <Col><input type="text" aria-label="tour de hanche" onChange={evt => handleHipSizeChange(evt)} value={hipSize}></input></Col>
+              <Col><input type="text" className={styles.inputs} aria-label="tour de hanche" onChange={evt => handleHipSizeChange(evt)} value={hipSize}></input></Col>
             </Row>
             <Row>
               <Col>3 {t('crotchSize')} (cm)</Col>
-              <Col><input type="text" aria-label="fourche avant" onChange={evt => handleCrotchSizeChange(evt)} value={crotchSize}></input></Col>
+              <Col><input type="text" className={styles.inputs} aria-label="fourche avant" onChange={evt => handleCrotchSizeChange(evt)} value={crotchSize}></input></Col>
             </Row>
             <Row>
               <Col>4 {t('thighSize')} (cm)</Col>
-              <Col><input type="text" aria-label="Cuisse" onChange={evt => handleThighSizeChange(evt)} value={thighSize}></input></Col>
+              <Col><input type="text" className={styles.inputs} aria-label="Cuisse" onChange={evt => handleThighSizeChange(evt)} value={thighSize}></input></Col>
             </Row>
             <Row>
               <Col>5 {t('length')} (cm)</Col>
-              <Col><input type="text" aria-label="Longueur" onChange={evt => handleLengthChange(evt)} value={length}></input></Col>
+              <Col><input type="text" className={styles.inputs} aria-label="Longueur" onChange={evt => handleLengthChange(evt)} value={length}></input></Col>
             </Row>
           </Col>
           <Col>
