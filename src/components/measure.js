@@ -144,6 +144,7 @@ const Measure = () => {
       thighSize: thighSize,
       length: length,
       clothImageName: clothImageName,
+      sex: sex
     };
 
     if (isInCart(product)) {
@@ -151,7 +152,7 @@ const Measure = () => {
     } else {
       addProduct(product);
     }
-    functions.postPant(waistSize, hipSize, crotchSize, thighSize, length, clothImageName);
+    functions.postPant(waistSize, hipSize, crotchSize, thighSize, length, clothImageName, sex);
   }
 
   const isInCart = product => {
