@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styles from './cartItem.module.scss';
 import { useTranslation } from 'react-i18next';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 const baseUrl = "https://api.mytaylor.org/"
 // const baseUrl = "http://localhost:2000/"
@@ -17,10 +19,10 @@ const CartItem = ({ product }) => {
     const { increase, decrease, removeProduct } = useContext(CartContext);
     let pantIimgUrl, pantSex;
     if (product.sex === 'F') {
-        pantSex= t('female');
+        pantSex = t('female');
         pantIimgUrl = imgUrl + '/female/' + product?.clothImageName + '.jpg';
     } else {
-        pantSex= t('male');
+        pantSex = t('male');
         pantIimgUrl = imgUrl + '/male/' + product?.clothImageName + '.jpg';
     }
 
@@ -28,11 +30,13 @@ const CartItem = ({ product }) => {
         <Container>
             <Row className={styles.rowProduct}>
                 <Col>
-                    <img
-                        className={styles.imageProduct}
-                        alt={product?.name}
-                        key={product?.name}
-                        src={pantIimgUrl} />
+                    <Zoom>
+                        <img
+                            className={styles.imageProduct}
+                            alt={product?.name}
+                            key={product?.name}
+                            src={pantIimgUrl} />
+                    </Zoom>
                 </Col>
                 <Col className={styles.colCentered}>
                     <h4>{product?.name} {pantSex} {product?.id} </h4>

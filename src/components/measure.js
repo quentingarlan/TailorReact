@@ -170,7 +170,7 @@ const Measure = () => {
         <Row className="align-items-center">
           <Col lg='3'><img src="/measurePant.jpg" alt="mesure pantalon" /></Col>
           <Col lg='5'>
-          <Row className={styles.centerBottomMargin}>{t('autoSize')}</Row>
+          <Row className={styles.centerBottomMargin}><h5>{t('autoSize')}</h5></Row>
             <Row>
               <Col>
                 <Row>
