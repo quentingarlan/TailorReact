@@ -97,7 +97,7 @@ const Measure = () => {
     };
   }
 
-  const handleAutoSizeChange = ( target ) => {
+  const handleAutoSizeChange = (target) => {
     updateAutoSize(target.value);
     changeSizes(target.value, sex);
   }
@@ -170,16 +170,21 @@ const Measure = () => {
         <Row className="align-items-center">
           <Col lg='3'><img src="/measurePant.jpg" alt="mesure pantalon" /></Col>
           <Col lg='5'>
-            <Row >
-              <Col>{t('autoSize')}</Col>
+          <Row className={styles.centerBottomMargin}>{t('autoSize')}</Row>
+            <Row>
               <Col>
-                <div>
-                  <input type="radio" id="F" name="sex" value="F" onChange={handleSexChange} checked={sex === "F"} />
-                  <label htmlFor="F">{t('female')}</label></div><div>
-                  <input type="radio" id="M" name="sex" value="M" onChange={handleSexChange} checked={sex === "M"} />
-                  <label htmlFor="M">{t('male')}</label></div>
+                <Row>
+                  <Col>
+                    <input type="radio" id="F" name="sex" value="F" onChange={handleSexChange} checked={sex === "F"} />
+                    <label htmlFor="F">{t('female')}</label>
+                  </Col> 
+                  <Col>
+                    <input type="radio" id="M" name="sex" value="M" onChange={handleSexChange} checked={sex === "M"} />
+                    <label htmlFor="M">{t('male')}</label>
+                  </Col>
+                </Row>
               </Col>
-              <Col><Dropdown options={sizesList} onChange={handleAutoSizeChange}
+              <Col><Dropdown className={styles.drowDown} options={sizesList} onChange={handleAutoSizeChange}
                 value={autoSize} /></Col>
             </Row>
             <Row >

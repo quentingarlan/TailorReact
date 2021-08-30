@@ -15,6 +15,14 @@ const imgUrl = baseUrl + 'images/pants/';
 const CartItem = ({ product }) => {
     const { t } = useTranslation();
     const { increase, decrease, removeProduct } = useContext(CartContext);
+    let pantIimgUrl, pantSex;
+    if (product.sex === 'F') {
+        pantSex= t('female');
+        pantIimgUrl = imgUrl + '/female/' + product?.clothImageName + '.jpg';
+    } else {
+        pantSex= t('male');
+        pantIimgUrl = imgUrl + '/male/' + product?.clothImageName + '.jpg';
+    }
 
     return (
         <Container>
@@ -24,10 +32,10 @@ const CartItem = ({ product }) => {
                         className={styles.imageProduct}
                         alt={product?.name}
                         key={product?.name}
-                        src={imgUrl + product?.clothImageName + '.jpg'} />
+                        src={pantIimgUrl} />
                 </Col>
                 <Col className={styles.colCentered}>
-                    <h4>{product?.name} {product?.id} </h4>
+                    <h4>{product?.name} {pantSex} {product?.id} </h4>
                     <h5>{t('price')}: {formatNumber(product?.price)} </h5>
                     <div>{t('waistSize')}: {product?.waistSize} </div>
                     <div>{t('hipSize')}: {product?.hipSize} </div>
