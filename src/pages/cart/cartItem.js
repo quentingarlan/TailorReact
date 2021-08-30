@@ -20,10 +20,10 @@ const CartItem = ({ product }) => {
     let pantIimgUrl, pantSex;
     if (product.sex === 'F') {
         pantSex = t('female');
-        pantIimgUrl = imgUrl + '/female/' + product?.clothImageName + '.jpg';
+        pantIimgUrl = imgUrl + 'female/' + product?.clothImageName + '.jpg';
     } else {
         pantSex = t('male');
-        pantIimgUrl = imgUrl + '/male/' + product?.clothImageName + '.jpg';
+        pantIimgUrl = imgUrl + 'male/' + product?.clothImageName + '.jpg';
     }
 
     return (

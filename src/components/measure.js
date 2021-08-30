@@ -10,8 +10,14 @@ import { useTranslation } from 'react-i18next';
 import { sizesList } from './sizesList';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 const Measure = () => {
+  const baseUrl = "https://api.mytaylor.org/"
+  // const baseUrl = "http://localhost:2000/"
+  const imgUrl = baseUrl + 'images/pants/';
+
   const { addProduct, cartItems, increase } = useContext(CartContext);
   const { t } = useTranslation();
 
@@ -120,8 +126,11 @@ const Measure = () => {
   const handleLengthChange = ({ target }) => {
     updateLength(target.value);
   };
+  let pantIimgUrl = imgUrl + 'male/' + clothImageName + '.jpg';
   const handleClothImageNameChange = (target) => {
     updateClothImageName(target);
+    pantIimgUrl = imgUrl + 'male/' + clothImageName + '.jpg';
+    console.log('pantIimgUrl', pantIimgUrl)
   };
 
   const handleSubmit = () => {
@@ -135,7 +144,7 @@ const Measure = () => {
 
     const product = {
       id: cartItems.length,
-      price: 50,
+      price: 30,
       quantity: 1,
       name: t('pant'),
       waistSize: waistSize,
@@ -170,14 +179,14 @@ const Measure = () => {
         <Row className="align-items-center">
           <Col lg='3'><img src="/measurePant.jpg" alt="mesure pantalon" /></Col>
           <Col lg='5'>
-          <Row className={styles.centerBottomMargin}><h5>{t('autoSize')}</h5></Row>
+            <Row className={styles.centerBottomMargin}><h5>{t('autoSize')}</h5></Row>
             <Row>
               <Col>
                 <Row>
                   <Col>
                     <input type="radio" id="F" name="sex" value="F" onChange={handleSexChange} checked={sex === "F"} />
                     <label htmlFor="F">{t('female')}</label>
-                  </Col> 
+                  </Col>
                   <Col>
                     <input type="radio" id="M" name="sex" value="M" onChange={handleSexChange} checked={sex === "M"} />
                     <label htmlFor="M">{t('male')}</label>
@@ -210,6 +219,15 @@ const Measure = () => {
           </Col>
           <Col>
             <YourCloths onClothChange={evt => handleClothImageNameChange(evt)} onClothLoad={val => handleClothImageNameChange(val)} ></YourCloths>
+          </Col>
+          <Col>
+            <Zoom>
+              <img
+                className={styles.imageProduct}
+                alt={clothImageName}
+                key={clothImageName}
+                src={pantIimgUrl} />
+            </Zoom>
           </Col>
         </Row>
       </Container>
