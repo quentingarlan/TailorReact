@@ -18,29 +18,22 @@ import styles from './cart.module.scss';
 export default function Cart() {
     const { t } = useTranslation();
     const { total, cartItems, itemCount, clearCart, checkout, handleCheckout } = useContext(CartContext);
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+    const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
     const [zipCode, setZipCode] = useState("");
-    const [mail, setEmail] = useState("");
     const [country, setCountry] = useState("France");
-    const handleSend = () => {
-        functions.postMail(cartItems, firstName, lastName, address, zipCode, mail, country);
+    const handleSuccess = (details, data) => {
+        functions.postMail(cartItems, details.payer.name.given_name, details.payer.name.surname, address, zipCode, details.payer.email_address, details.payer.address.country_code);
+        handleCheckout();
     }
-    const handleFirstNameChange = ({ target }) => {
-        setFirstName(target.value);
-    };
-    const handleLastNameChange = ({ target }) => {
-        setLastName(target.value);
+    const handlePhone = ({ target }) => {
+        setPhone(target.value);
     };
     const handleAddressChange = ({ target }) => {
         setAddress(target.value);
     };
     const handleZipCodeChange = ({ target }) => {
         setZipCode(target.value);
-    };
-    const handleEmailChange = ({ target }) => {
-        setEmail(target.value);
     };
     const handleCountryChange = ( target ) => {
         setCountry(target.value);
@@ -53,17 +46,12 @@ export default function Cart() {
                         <Col>
                             <Row>
                                 <Col lg='5'>{t('country')}</Col>
-                                <Col lg='5'><Dropdown  className={styles.drowDown} options={countryList} onChange={handleCountryChange} value={country} /></Col>
+                                <Col lg='3'><Dropdown  className={styles.drowDown} options={countryList} onChange={handleCountryChange} value={country} /></Col>
                             </Row>
                             <Row>
-                                <Col lg='5'>{t('firstName')}</Col>
-                                <Col lg='3'><input onChange={handleFirstNameChange} className={styles.inputs}
-                                    value={firstName} type="text" autoFocus="autofocus" /></Col>
-                            </Row>
-                            <Row>
-                                <Col lg='5'>{t('lastName')}</Col>
-                                <Col lg='3'><input onChange={handleLastNameChange} className={styles.inputs}
-                                    value={lastName} type="text" /></Col>
+                                <Col lg='5'>{t('phone')}</Col>
+                                <Col lg='3'><input onChange={handlePhone} className={styles.inputs}
+                                    value={phone} type="text" /></Col>
                             </Row>
                         </Col>
                         <Col>
@@ -76,11 +64,6 @@ export default function Cart() {
                                 <Col lg='5'>{t('zipCode')}</Col>
                                 <Col lg='3'><input onChange={handleZipCodeChange} className={styles.inputs}
                                     value={zipCode} type="text" /></Col>
-                            </Row>
-                            <Row>
-                                <Col lg='5'>{t('email')}</Col>
-                                <Col lg='3'><input onChange={handleEmailChange} className={styles.inputs}
-                                    value={mail} type="text" /></Col>
                             </Row>
                         </Col>
                     </Row>
@@ -117,8 +100,9 @@ export default function Cart() {
                                                 currency:"USD"
                                             }}
                                             amount={total}
-                                            onSuccess={handleCheckout}
-                                            onClick={handleSend} />
+                                            onSuccess={(details, data) => {
+                                                handleSuccess(details, data);
+                                                }} />
                                         <button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>{t('clearCart')}</button>
                                     </div>
                                 </div>
