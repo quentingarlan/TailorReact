@@ -57,7 +57,7 @@ export default function Cart() {
                         <Col>
                             <Row>
                                 <Col lg='5'>{t('address')}</Col>
-                                <Col lg='3'><input onChange={handleAddressChange} className={styles.inputs}
+                                <Col lg='3'><input onChange={handleAddressChange} className={styles.inputAdress}
                                     value={address} type="text" /></Col>
                             </Row>
                             <Row>

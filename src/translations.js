@@ -38,7 +38,8 @@ export const translations = {
             "shipping": "Shipping",
             "autoSize": "Measures",
             "male": "Man",
-            "female": "Woman"
+            "female": "Woman",
+            "phone": "Phone"
         }
     },
     fr: {
@@ -77,7 +78,8 @@ export const translations = {
             "shipping": "Livraison",
             "autoSize": "Mesures",
             "male": "Homme",
-            "female": "Femme"
+            "female": "Femme",
+            "phone": "Téléphone"
         }
     }
 };
