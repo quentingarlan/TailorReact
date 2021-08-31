@@ -232,7 +232,7 @@ const Measure = () => {
         </Row>
       </Container>
       <div className={styles.centeredError} id="validationError" />
-      <input className={styles.center} type="button" value={t('addCart')} title="Add to cart" onClick={handleSubmit}></input>
+      <input className={styles.centeredButton} type="button" value={t('addCart')} title="Add to cart" onClick={handleSubmit}></input>
     </div >
   );
 }

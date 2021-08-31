@@ -13,6 +13,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useTranslation } from 'react-i18next';
+import styles from './cart.module.scss';
 
 export default function Cart() {
     const { t } = useTranslation();
@@ -52,34 +53,33 @@ export default function Cart() {
                         <Col>
                             <Row>
                                 <Col lg='5'>{t('country')}</Col>
-                                <Col lg='5'><Dropdown options={countryList} onChange={handleCountryChange} value={country} /></Col>
+                                <Col lg='5'><Dropdown  className={styles.drowDown} options={countryList} onChange={handleCountryChange} value={country} /></Col>
                             </Row>
                             <Row>
                                 <Col lg='5'>{t('firstName')}</Col>
-                                <Col lg='3'><input type="text"
-                                    onChange={handleFirstNameChange}
-                                    value={firstName} autoFocus="autofocus" /></Col>
+                                <Col lg='3'><input onChange={handleFirstNameChange} className={styles.inputs}
+                                    value={firstName} type="text" autoFocus="autofocus" /></Col>
                             </Row>
                             <Row>
                                 <Col lg='5'>{t('lastName')}</Col>
-                                <Col lg='3'><input onChange={handleLastNameChange}
+                                <Col lg='3'><input onChange={handleLastNameChange} className={styles.inputs}
                                     value={lastName} type="text" /></Col>
                             </Row>
                         </Col>
                         <Col>
                             <Row>
                                 <Col lg='5'>{t('address')}</Col>
-                                <Col lg='3'><input onChange={handleAddressChange}
+                                <Col lg='3'><input onChange={handleAddressChange} className={styles.inputs}
                                     value={address} type="text" /></Col>
                             </Row>
                             <Row>
                                 <Col lg='5'>{t('zipCode')}</Col>
-                                <Col lg='3'><input onChange={handleZipCodeChange}
+                                <Col lg='3'><input onChange={handleZipCodeChange} className={styles.inputs}
                                     value={zipCode} type="text" /></Col>
                             </Row>
                             <Row>
                                 <Col lg='5'>{t('email')}</Col>
-                                <Col lg='3'><input onChange={handleEmailChange}
+                                <Col lg='3'><input onChange={handleEmailChange} className={styles.inputs}
                                     value={mail} type="text" /></Col>
                             </Row>
                         </Col>
