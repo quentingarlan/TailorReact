@@ -19,29 +19,35 @@ export default function Cart() {
     const { t } = useTranslation();
     const { total, cartItems, itemCount, clearCart, checkout, handleCheckout } = useContext(CartContext);
     const [phone, setPhone] = useState("");
-    const [address, setAddress] = useState("");
-    const [zipCode, setZipCode] = useState("");
+    // const [address, setAddress] = useState("");
+    // const [zipCode, setZipCode] = useState("");
     const [country, setCountry] = useState("France");
-    const handlePaypalClick = (details) => {
-        if (!phone || !address || !zipCode || !country){
-            alert("please enter informations");
-        }
-    }
+    // const handlePaypalClick = (details) => {
+    //     if (!phone || !address || !zipCode || !country){
+    //         alert("please enter informations");
+    //     }
+    // }
     const handleSuccess = (details) => {
+        console.log('details', details)
+        let address = details.purchase_units[0].shipping.address + ' ' + details.purchase_units[0].shipping.address.admin_area_1
+            + ' ' + details.purchase_units[0].shipping.address.admin_area_2;
+
+        let zipCode = details.purchase_units[0].shipping.address.postal_code;
+
         functions.postMail(cartItems, details.payer.name.given_name, details.payer.name.surname, address,
-                            zipCode, details.payer.email_address, details.payer.address.country_code, phone);
+            zipCode, details.payer.email_address, details.payer.address.country_code, phone);
         handleCheckout();
     }
     const handlePhone = ({ target }) => {
         setPhone(target.value);
     };
-    const handleAddressChange = ({ target }) => {
-        setAddress(target.value);
-    };
-    const handleZipCodeChange = ({ target }) => {
-        setZipCode(target.value);
-    };
-    const handleCountryChange = ( target ) => {
+    // const handleAddressChange = ({ target }) => {
+    //     setAddress(target.value);
+    // };
+    // const handleZipCodeChange = ({ target }) => {
+    //     setZipCode(target.value);
+    // };
+    const handleCountryChange = (target) => {
         setCountry(target.value);
     };
     return <Layout title="Cart" description="This is the cart page">
@@ -52,7 +58,7 @@ export default function Cart() {
                         <Col>
                             <Row>
                                 <Col lg='5'>{t('country')}</Col>
-                                <Col lg='3'><Dropdown  className={styles.drowDown} options={countryList} onChange={handleCountryChange} value={country} /></Col>
+                                <Col lg='3'><Dropdown className={styles.drowDown} options={countryList} onChange={handleCountryChange} value={country} /></Col>
                             </Row>
                             <Row>
                                 <Col lg='5'>{t('phone')}</Col>
@@ -60,7 +66,7 @@ export default function Cart() {
                                     value={phone} type="text" /></Col>
                             </Row>
                         </Col>
-                        <Col>
+                        {/* <Col>
                             <Row>
                                 <Col lg='5'>{t('address')}</Col>
                                 <Col lg='3'><input onChange={handleAddressChange} className={styles.inputAdress}
@@ -71,7 +77,7 @@ export default function Cart() {
                                 <Col lg='3'><input onChange={handleZipCodeChange} className={styles.inputs}
                                     value={zipCode} type="text" /></Col>
                             </Row>
-                        </Col>
+                        </Col> */}
                     </Row>
                     <Row lg='8'>
                         {cartItems?.length > 0 ?
@@ -103,16 +109,13 @@ export default function Cart() {
                                             forceReRender
                                             options={{
                                                 clientId: "Afzfteg4p3l2fx7k_QJgwQKiNUFMp2EDNRk3Pw5jf52inYxuLHlPCt0IhFjVeof-LJ9Y8LZL31D_Pvng",
-                                                currency:"EUR"
+                                                currency: "EUR"
                                             }}
                                             amount={total}
-                                            onclick = {(details) => {
-                                                handlePaypalClick(details);
-                                            }}
                                             onSuccess={(details) => {
                                                 handleSuccess(details);
-                                            }} 
-                                            />
+                                            }}
+                                        />
                                         <button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>{t('clearCart')}</button>
                                     </div>
                                 </div>
