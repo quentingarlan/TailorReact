@@ -1,17 +1,15 @@
 import React from 'react';
 import styles from './footer.module.scss';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-    return ( 
+    return (
         <footer className={styles.footer}>
-            <a
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer">
-            <img src="/clothes.svg" alt="tailor Logo" width="50" height="50" className="logo" />
-          </a>
+            <Link to='/'>
+                <img src="/clothes.svg" alt="tailor Logo" width="50" height="50" className="logo" />
+            </Link>
         </footer>
     );
 }
- 
+
 export default Footer;

@@ -22,8 +22,14 @@ export default function Cart() {
     const [address, setAddress] = useState("");
     const [zipCode, setZipCode] = useState("");
     const [country, setCountry] = useState("France");
-    const handleSuccess = (details, data) => {
-        functions.postMail(cartItems, details.payer.name.given_name, details.payer.name.surname, address, zipCode, details.payer.email_address, details.payer.address.country_code);
+    const handlePaypalClick = (details) => {
+        if (!phone || !address || !zipCode || !country){
+            alert("please enter informations");
+        }
+    }
+    const handleSuccess = (details) => {
+        functions.postMail(cartItems, details.payer.name.given_name, details.payer.name.surname, address,
+                            zipCode, details.payer.email_address, details.payer.address.country_code, phone);
         handleCheckout();
     }
     const handlePhone = ({ target }) => {
@@ -97,12 +103,16 @@ export default function Cart() {
                                             forceReRender
                                             options={{
                                                 clientId: "Afzfteg4p3l2fx7k_QJgwQKiNUFMp2EDNRk3Pw5jf52inYxuLHlPCt0IhFjVeof-LJ9Y8LZL31D_Pvng",
-                                                currency:"USD"
+                                                currency:"EUR"
                                             }}
                                             amount={total}
-                                            onSuccess={(details, data) => {
-                                                handleSuccess(details, data);
-                                                }} />
+                                            onclick = {(details) => {
+                                                handlePaypalClick(details);
+                                            }}
+                                            onSuccess={(details) => {
+                                                handleSuccess(details);
+                                            }} 
+                                            />
                                         <button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>{t('clearCart')}</button>
                                     </div>
                                 </div>
