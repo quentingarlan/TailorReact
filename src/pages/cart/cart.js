@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from '../shared/layout';
 import CartProducts from './cartProduct';
 import { CartContext } from '../../contexts/cartContext';
-import { formatNumber } from '../../helpers/utils';
+import { formatNumber, formatFrNumber } from '../../helpers/utils';
 import { PayPalButton } from "react-paypal-button-v2";
 import { functions } from '../../api/MailApiCall';
 import Dropdown from 'react-dropdown';
@@ -14,6 +14,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useTranslation } from 'react-i18next';
 import styles from './cart.module.scss';
+import GooglePayButton from '@google-pay/button-react';
 
 export default function Cart() {
     const { t } = useTranslation();
@@ -27,6 +28,15 @@ export default function Cart() {
     //         alert("please enter informations");
     //     }
     // }
+    // const paymentsClient =
+    //     new google.payments.api.PaymentsClient({ environment: 'TEST' });
+    // const button =
+    //     paymentsClient.createButton({
+    //         onClick: () => console.log('TODO: click handler'),
+    //         allowedPaymentMethods: []
+    //     }); // make sure to provide an allowed payment method
+    // document.getElementById('container').appendChild(button);
+
     const handleSuccess = (details) => {
         console.log('details', details)
         let address = details.purchase_units[0].shipping.address + ' ' + details.purchase_units[0].shipping.address.admin_area_1
@@ -116,11 +126,51 @@ export default function Cart() {
                                                 handleSuccess(details);
                                             }}
                                         />
+                                        <GooglePayButton
+                                            environment="TEST"
+                                            paymentRequest={{
+                                                apiVersion: 2,
+                                                apiVersionMinor: 0,
+                                                allowedPaymentMethods: [
+                                                    {
+                                                        type: 'CARD',
+                                                        parameters: {
+                                                            allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                                                            allowedCardNetworks: ['MASTERCARD', 'VISA'],
+                                                        },
+                                                        tokenizationSpecification: {
+                                                            type: 'PAYMENT_GATEWAY',
+                                                            parameters: {
+                                                                gateway: 'example',
+                                                                gatewayMerchantId: 'exampleGatewayMerchantId',
+                                                            },
+                                                        },
+                                                    },
+                                                ],
+                                                merchantInfo: {
+                                                    merchantId: '12345678901234567890',
+                                                    merchantName: 'Demo Merchant',
+                                                },
+                                                transactionInfo: {
+                                                    totalPriceStatus: 'FINAL',
+                                                    totalPriceLabel: 'Total',
+                                                    totalPrice: total,
+                                                    currencyCode: 'EUR',
+                                                    countryCode: 'FR',
+                                                },
+                                            }}
+                                            onLoadPaymentData={paymentRequest => {
+                                                console.log('load payment data', paymentRequest);
+                                            }}
+                                        />
                                         <button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>{t('clearCart')}</button>
                                     </div>
+
+
                                 </div>
                             </div>
                         }
+
                     </Row>
                 </Col>
             </Row>
