@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from '../shared/layout';
 import CartProducts from './cartProduct';
 import { CartContext } from '../../contexts/cartContext';
-import { formatNumber, formatFrNumber } from '../../helpers/utils';
+import { formatNumber } from '../../helpers/utils';
 import { PayPalButton } from "react-paypal-button-v2";
 import { functions } from '../../api/MailApiCall';
 import Dropdown from 'react-dropdown';
@@ -20,24 +20,15 @@ export default function Cart() {
     const { t } = useTranslation();
     const { total, cartItems, itemCount, clearCart, checkout, handleCheckout } = useContext(CartContext);
     const [phone, setPhone] = useState("");
-    // const [address, setAddress] = useState("");
-    // const [zipCode, setZipCode] = useState("");
+    const [address, setAddress] = useState("");
+    const [zipCode, setZipCode] = useState("");
     const [country, setCountry] = useState("France");
     // const handlePaypalClick = (details) => {
     //     if (!phone || !address || !zipCode || !country){
     //         alert("please enter informations");
     //     }
     // }
-    // const paymentsClient =
-    //     new google.payments.api.PaymentsClient({ environment: 'TEST' });
-    // const button =
-    //     paymentsClient.createButton({
-    //         onClick: () => console.log('TODO: click handler'),
-    //         allowedPaymentMethods: []
-    //     }); // make sure to provide an allowed payment method
-    // document.getElementById('container').appendChild(button);
-
-    const handleSuccess = (details) => {
+    const handlePaypalSuccess = (details) => {
         console.log('details', details)
         let address = details.purchase_units[0].shipping.address + ' ' + details.purchase_units[0].shipping.address.admin_area_1
             + ' ' + details.purchase_units[0].shipping.address.admin_area_2;
@@ -51,12 +42,12 @@ export default function Cart() {
     const handlePhone = ({ target }) => {
         setPhone(target.value);
     };
-    // const handleAddressChange = ({ target }) => {
-    //     setAddress(target.value);
-    // };
-    // const handleZipCodeChange = ({ target }) => {
-    //     setZipCode(target.value);
-    // };
+    const handleAddressChange = ({ target }) => {
+        setAddress(target.value);
+    };
+    const handleZipCodeChange = ({ target }) => {
+        setZipCode(target.value);
+    };
     const handleCountryChange = (target) => {
         setCountry(target.value);
     };
@@ -76,7 +67,7 @@ export default function Cart() {
                                     value={phone} type="text" /></Col>
                             </Row>
                         </Col>
-                        {/* <Col>
+                        <Col>
                             <Row>
                                 <Col lg='5'>{t('address')}</Col>
                                 <Col lg='3'><input onChange={handleAddressChange} className={styles.inputAdress}
@@ -87,7 +78,7 @@ export default function Cart() {
                                 <Col lg='3'><input onChange={handleZipCodeChange} className={styles.inputs}
                                     value={zipCode} type="text" /></Col>
                             </Row>
-                        </Col> */}
+                        </Col>
                     </Row>
                     <Row lg='8'>
                         {cartItems?.length > 0 ?
@@ -123,7 +114,7 @@ export default function Cart() {
                                             }}
                                             amount={total}
                                             onSuccess={(details) => {
-                                                handleSuccess(details);
+                                                handlePaypalSuccess(details);
                                             }}
                                         />
                                         <GooglePayButton
@@ -149,7 +140,7 @@ export default function Cart() {
                                                 ],
                                                 merchantInfo: {
                                                     merchantId: '12345678901234567890',
-                                                    merchantName: 'Demo Merchant',
+                                                    merchantName: 'Ghana Tailor',
                                                 },
                                                 transactionInfo: {
                                                     totalPriceStatus: 'FINAL',
@@ -165,12 +156,9 @@ export default function Cart() {
                                         />
                                         <button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>{t('clearCart')}</button>
                                     </div>
-
-
                                 </div>
                             </div>
                         }
-
                     </Row>
                 </Col>
             </Row>
