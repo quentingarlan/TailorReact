@@ -31,8 +31,9 @@
     "react-paypal-button-v2": "^2.6.3",
     "react-responsive-carousel": "^3.2.21",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "^0.9.5",
+    "react-scripts": "^4.0.3",
     "sass": "^1.42.0",
+    "uuid": "^7.0.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -58,5 +59,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
   }
 }
