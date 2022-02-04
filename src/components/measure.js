@@ -161,7 +161,7 @@ const Measure = () => {
     } else {
       addProduct(product);
     }
-    functions.postPant(waistSize, hipSize, crotchSize, thighSize, length, clothImageName, sex);
+    // functions.postPant(waistSize, hipSize, crotchSize, thighSize, length, clothImageName, sex);
   }
 
   const isInCart = product => {
