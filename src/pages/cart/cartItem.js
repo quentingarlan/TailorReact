@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 
-const baseUrl = "https://api.mytaylor.org/"
+const baseUrl = "http://api.ghanatailor.com/"
 // const baseUrl = "http://localhost:2000/"
 const imgUrl = baseUrl + 'images/pants/';
 
