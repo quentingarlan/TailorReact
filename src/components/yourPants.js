@@ -11,15 +11,15 @@ export class YourPants extends React.Component {
     this.state = {
       pants: []
     };
-    this.fetchPants();
+    // this.fetchPants();
   }
 
-  async fetchPants() {
-    const asyncData = await axios.get(pantUrl);
-    this.setState({
-      pants: asyncData.data.rows
-    });
-  }
+  // async fetchPants() {
+  //   const asyncData = await axios.get(pantUrl);
+  //   this.setState({
+  //     pants: asyncData.data.rows
+  //   });
+  // }
 
   render() {
     if (this.state.pants) {

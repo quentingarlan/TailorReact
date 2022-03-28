@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import styles from './yourCloth.module.css';
 
-const baseUrl = "https://api.mytaylor.org/";
-//const baseUrl = "http://localhost:2000/"
+const baseUrl = "http://api.ghanatailor.com/";
+// const baseUrl = "http://localhost:2000/"
 
 const clothUrl = baseUrl + 'cloth/';
 const imgUrl = baseUrl + 'images/cloth/';
