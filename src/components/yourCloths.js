@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import styles from './yourCloth.module.css';
 
-const baseUrl = "http://api.ghanatailor.com/";
+const baseUrl = "https://api.ghanatailor.com/";
 // const baseUrl = "http://localhost:2000/"
 
 const clothUrl = baseUrl + 'cloth/';

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class ClothesApiCalls { }
 
-const baseUrl = "http://api.ghanatailor.com/"
+const baseUrl = "https://api.ghanatailor.com/"
 //const baseUrl = "http://localhost:2000/"
 const pantUrl = baseUrl + "pant";
 

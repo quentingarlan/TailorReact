@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class MailApiCall { }
 
-const baseUrl = "http://api.ghanatailor.com/"
+const baseUrl = "https://api.ghanatailor.com/"
 //const baseUrl = "http://localhost:2000/"
 
 const mailUrl = baseUrl + "mail";
