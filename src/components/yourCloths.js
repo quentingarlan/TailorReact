@@ -1,77 +1,88 @@
-import React from 'react';
-import axios from 'axios';
-import styles from './yourCloth.module.css';
-
-const baseUrl = "https://api.ghanatailor.com/";
+import React from "react"
+import styles from "./yourCloth.module.css"
+import clothRegistry from "./cloths.json"
+// const baseUrl = "https://api.ghanatailor.com/"
 // const baseUrl = "http://localhost:2000/"
-
-const clothUrl = baseUrl + 'cloth/';
-const imgUrl = baseUrl + 'images/cloth/';
+// const clothUrl = baseUrl + "cloth/"
+const imgPath = "/cloth/"
 
 export class YourCloths extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      cloths: []
+      cloths: this.fetchCloths(),
     }
-    this.fetchCloths();
   }
 
   render() {
     if (this.state.cloths.length > 0) {
       // this.props.onClothLoad(this.state.cloths[0]);
-      return <div>
-        <div>Tissus</div>
-        {
-          this.state.cloths.map(cloth => 
-            <img className={styles.img} alt={cloth.fileId}
-              id={cloth.fileId} key={cloth.fileId} value={cloth.fileId} src={imgUrl + cloth.fileName}
-              width='100' height='100'
-              onClick={evt => this.handleChange(evt, cloth.fileId)}
-              onLoad={evt => this.handleLoad(evt, cloth.fileId)} />)
-        }
-      </div>
+      return (
+        <div>
+          <div>Tissus</div>
+          {this.state.cloths.map((cloth) => (
+            <img
+              className={styles.img}
+              alt={cloth}
+              id={cloth}
+              key={cloth}
+              value={cloth}
+              src={imgPath + cloth}
+              width="100"
+              height="100"
+              onClick={(evt) => this.handleChange(evt, cloth)}
+              onLoad={(evt) => this.handleLoad(evt, cloth)}
+            />
+          ))}
+        </div>
+      )
     } else {
       return <div></div>
     }
   }
 
   componentDidUpdate() {
-    var firstElt = document.getElementById(this.state.cloths[0]);
-    if (firstElt){
-      this.unSelectAllElements(firstElt.parentElement);
-      firstElt.className = styles.selectedImg;
+    console.log("componentDidUpdate")
+    var firstElt = document.getElementById(this.state.cloths[0])
+    if (firstElt) {
+      this.unSelectAllElements(firstElt.parentElement)
+      firstElt.className = styles.selectedImg
     }
   }
 
   handleLoad(evt, val) {
-    if (val === this.state.cloths[0].fileId) {
-      evt.target.className = styles.selectedImg;
-      this.props.onClothLoad(val);
+    console.log("handleLoad")
+    if (val === this.state.cloths[0]) {
+      evt.target.className = styles.selectedImg
+      this.props.onClothLoad(val)
     }
   }
 
   handleChange(evt, data) {
-    this.unSelectAllElements(evt.target.parentElement);
-
+    this.unSelectAllElements(evt.target.parentElement)
+    console.log("evt.target.parentElement", evt.target.parentElement)
     if (evt.target.className === styles.img) {
-      evt.target.className = styles.selectedImg;
+      evt.target.className = styles.selectedImg
     } else {
-      evt.target.className = styles.img;
+      evt.target.className = styles.img
     }
-    this.props.onClothChange(data);
+    this.props.onClothChange(data)
   }
 
   unSelectAllElements(element) {
-    element.childNodes.forEach(element => {
-      element.className = styles.img;
-    });
+    element.childNodes.forEach((element) => {
+      element.className = styles.img
+    })
   }
-
-  async fetchCloths() {
-    const asyncData = await axios.get(clothUrl);
-    this.setState({
-      cloths: asyncData.data
-    });
+  fetchCloths() {
+    let clothList = []
+    for (let x in clothRegistry) {
+      try {
+        clothList.push(clothRegistry[x])
+      } catch (e) {
+        console.log(e)
+      }
+    }
+    return clothList
   }
 }
