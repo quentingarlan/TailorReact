@@ -41,17 +41,7 @@ export class YourCloths extends React.Component {
     }
   }
 
-  componentDidUpdate() {
-    console.log("componentDidUpdate")
-    var firstElt = document.getElementById(this.state.cloths[0])
-    if (firstElt) {
-      this.unSelectAllElements(firstElt.parentElement)
-      firstElt.className = styles.selectedImg
-    }
-  }
-
   handleLoad(evt, val) {
-    console.log("handleLoad")
     if (val === this.state.cloths[0]) {
       evt.target.className = styles.selectedImg
       this.props.onClothLoad(val)
@@ -60,7 +50,6 @@ export class YourCloths extends React.Component {
 
   handleChange(evt, data) {
     this.unSelectAllElements(evt.target.parentElement)
-    console.log("evt.target.parentElement", evt.target.parentElement)
     if (evt.target.className === styles.img) {
       evt.target.className = styles.selectedImg
     } else {
