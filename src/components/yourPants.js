@@ -1,16 +1,13 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react"
 
-const baseUrl = "https://api.ghanatailor.com/"
-//const baseUrl = "http://localhost:2000/"
-const pantUrl = baseUrl + "pant";
+const pantUrl = baseUrl + "pant"
 
 export class YourPants extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      pants: []
-    };
+      pants: [],
+    }
     // this.fetchPants();
   }
 
@@ -23,16 +20,20 @@ export class YourPants extends React.Component {
 
   render() {
     if (this.state.pants) {
-      return <div>
-        <div>Your pants</div>
-        {
-          this.state.pants.map(pant =>
-            <div key={pant.Id}> pant id {pant.Id} hipSize {pant.hipSize} crotchSize {pant.crotchSize}</div>)
-        }
-      </div>
+      return (
+        <div>
+          <div>Your pants</div>
+          {this.state.pants.map((pant) => (
+            <div key={pant.Id}>
+              {" "}
+              pant id {pant.Id} hipSize {pant.hipSize} crotchSize{" "}
+              {pant.crotchSize}
+            </div>
+          ))}
+        </div>
+      )
     } else {
       return <div> </div>
     }
   }
-
 }

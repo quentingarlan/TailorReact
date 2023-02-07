@@ -13,8 +13,6 @@ import Zoom from "react-medium-image-zoom"
 import "react-medium-image-zoom/dist/styles.css"
 
 const Measure = () => {
-  // const baseUrl = "https://api.ghanatailor.com/"
-  // const baseUrl = "http://localhost:2000/"
   const imgPath = "/pants/"
 
   const { addProduct, cartItems, increase } = useContext(CartContext)

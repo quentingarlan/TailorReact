@@ -4,8 +4,6 @@ import axios from "axios"
 const baseUrl = "https://api.ghanatailor.com/"
 const lambdaUrl =
   "https://yyk3xec2lvtjukozwid3ddwj6i0kwvii.lambda-url.eu-central-1.on.aws/"
-//const baseUrl = "http://localhost:2000/"
-const clothUrl = baseUrl + "cloth"
 
 export class SendCloth extends React.Component {
   constructor(props) {
@@ -50,9 +48,6 @@ export class SendCloth extends React.Component {
     const name = this.state.nameFile
     data.append("file", file)
     data.append("name", name)
-    console.log("file", file)
-    console.log("name", name)
-
     const reader = new FileReader()
     reader.onload = function (evt) {
       const metadata = `name: ${file.name}, type: ${file.type}, size: ${file.size}, contents:`

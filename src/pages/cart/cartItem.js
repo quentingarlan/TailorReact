@@ -14,9 +14,6 @@ import { useTranslation } from "react-i18next"
 import Zoom from "react-medium-image-zoom"
 import "react-medium-image-zoom/dist/styles.css"
 
-// const baseUrl = "https://api.ghanatailor.com/"
-// const baseUrl = "http://localhost:2000/"
-// const imgUrl = baseUrl + "images/pants/"
 const imgPath = "/pants/"
 
 const CartItem = ({ product }) => {
@@ -47,7 +44,7 @@ const CartItem = ({ product }) => {
         </Col>
         <Col className={styles.colCentered}>
           <h4>
-            {product?.name} {pantSex} {product?.id}{" "}
+            {product?.name} {pantSex} {product?.id + 1}{" "}
           </h4>
           <h5>
             {t("price")}: {formatNumber(product?.price)}{" "}
