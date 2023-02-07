@@ -1,7 +1,6 @@
 import React from "react"
 import axios from "axios"
 
-const baseUrl = "https://api.ghanatailor.com/"
 const lambdaUrl =
   "https://yyk3xec2lvtjukozwid3ddwj6i0kwvii.lambda-url.eu-central-1.on.aws/"
 
