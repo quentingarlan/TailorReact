@@ -1,11 +1,12 @@
 .flagImage {
-    margin: 10px;
-  }
+  margin: 10px;
+}
 
-  .flagContainer{
-    margin: 20px;
-    position: fixed;
-    top: 5%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-  }
+.flagContainer {
+  margin: 20px;
+  position: fixed;
+  top: 5%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}

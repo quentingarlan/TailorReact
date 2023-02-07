@@ -28,7 +28,6 @@ const CartItem = ({ product }) => {
     pantIimgUrl = imgPath + "male/" + product?.clothImageName
   }
 
-  console.log("img", pantIimgUrl)
   return (
     <Container>
       <Row className={styles.rowProduct}>
