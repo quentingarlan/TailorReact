@@ -1,15 +1,28 @@
 .header {
-    padding: 10px;
-    text-align: center;
-    border-left: 20px solid rgb(50, 70, 168);
-    border-right: 20px solid rgb(50, 70, 168);
-    a {
-        display: inline-block;
-        margin-right: 10px;
-        padding: 5px 10px;
-        svg {
-            width: 18px;
-            margin-right: 5px;
-        }
+  padding: 10px;
+  text-align: center;
+  border-left: 20px solid rgb(50, 70, 168);
+  border-right: 20px solid rgb(50, 70, 168);
+  a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    svg {
+      width: 18px;
+      margin-right: 5px;
     }
+  }
+}
+
+.tabLink:link {
+  text-decoration: none;
+  color: #47a1ad;
+}
+.tabLink:hover {
+  text-decoration: underline;
+  color: #47a1ad;
+}
+.homeLink:hover {
+  text-decoration: solid;
+  color: #47a1ad;
 }
